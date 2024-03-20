@@ -1,0 +1,241 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+ol[class],
+ul[class] {
+  padding: 0;
+  margin: 0;
+}
+
+blockquote,
+body,
+dd,
+dl,
+h1,
+h2,
+h3,
+h4,
+li,
+ol[class],
+p,
+ul[class] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+ol[class],
+ul[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  color: var(--border-color);
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--border-color);
+}
+
+::placeholder {
+  color: var(--border-color);
+}
+
+:root {
+  --color-mode: "dark";
+  --theme-color: #ff6161;
+  --page-bg-color: #12171c;
+  --bg-off: #1f2327;
+  --border-color: #373c3f;
+  --border-color-lighter: #646a6e;
+  --text-color: #fff;
+  --img-filter: invert(75%) brightness(200%);
+  --opacity-img: 0.9;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-mode: "light";
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --color-mode: "light";
+    --page-bg-color: #fff;
+    --text-color: #12171c;
+    --bg-off: #eee;
+    --border-color: #95a0a7;
+    --border-color-lighter: #12171c;
+    --img-filter: invert(0%);
+    --opacity-img: 1;
+  }
+}
+
+[data-user-color-scheme="light"] {
+  --color-mode: "light";
+  --page-bg-color: #fff;
+  --text-color: #12171c;
+  --bg-off: #eee;
+  --border-color: #95a0a7;
+  --border-color-lighter: #12171c;
+  --img-filter: invert(0%);
+  --opacity-img: 1;
+}
+
+html {
+  background-color: var(--page-bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  text-align: left;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a.link {
+  position: relative;
+}
+
+a.link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--theme-color);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.link:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.active a:before {
+  visibility: visible;
+  width: 100%;
+}
+
+body {
+  transition: all 0.3s ease;
+}
+
+body div {
+  transition: all 0.3s ease;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.branding h1 {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+nav .main-nav {
+  margin-top: 5px;
+}
+
+nav .social-icon {
+  margin-top: 5px;
+}
+
+nav .social-icon li a img {
+  width: 24px;
+  filter: var(--img-filter);
+}
+
+main {
+  margin-top: 100px;
+}
+
+main a {
+  border-bottom: 1px solid var(--border-color);
+}
+
+main a:hover {
+  border-bottom: none;
+}
+
+.theme-switcher p {
+  font-size: 12px;
+  color: var(--text-color-muted);
+  border: 1px solid var(--border-color-light);
+  padding: 2px 8px 4px 8px;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+.title-dot {
+  color: #FF0080;
+  font-size: 32px;
+  margin-left: 2px;
+}
+
+.theme-switcher a img {
+  width: 20px;
+  filter: var(--img-filter);
+}
+
+.theme-switcher .toggle-button {
+  cursor: pointer;
+}

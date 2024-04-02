@@ -16,9 +16,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Landing Page">
-  <meta name="supported-color-schemes" content="light dark">
+  <meta name="supported-color-schemes" content="dark">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#222">
+  <meta name="theme-color" content="#353">
 
   <title>erongo.net | parking page</title>
 
@@ -34,47 +34,13 @@
         <h1><a href="/">erongo</a><span class="title-dot">.</span></h1>
       </div>
       <ul class="social-icon">
-        <li><a href=""><img src="img/github.svg" alt="https://github.com/erongo"> </a></li>
-        <li class="[ toggle-button ] [ js-mode-toggle ]"><a class="[ toggle-button__text ]" href="javascript:void(0);" title="Switch Color Theme"><img src="img/toggle.svg" alt=""></a></li>
+        <li><a href="https://github.com/erongo"><img src="img/github.svg" alt="https://github.com/erongo"> </a></li>
       </ul>
     </nav>
 
     <main>
     </main>
   </div>
-
-  <script>
-   document.documentElement.classList.remove("no-js");
-   const STORAGE_KEY = "user-color-scheme";
-   const COLOR_MODE_KEY = "--color-mode";
-   const modeToggleButton = document.querySelector(".js-mode-toggle");
-   const modeToggleText = document.querySelector(".js-mode-toggle-text");
-   const modeStatusElement = document.querySelector(".js-mode-status");
-
-   const getCSSCustomProp = (prop) => {
-      const value = getComputedStyle(document.documentElement).getPropertyValue(prop);
-      return value.length ? value.replace(/\'|"/g, "").trim() : value;
-   };
-
-   const applySetting = (mode) => {
-      const currentMode = mode || localStorage.getItem(STORAGE_KEY) || getCSSCustomProp(COLOR_MODE_KEY);
-      document.documentElement.setAttribute("data-user-color-scheme", currentMode);
-   };
-
-   const toggleSetting = () => {
-      const currentMode = localStorage.getItem(STORAGE_KEY) || getCSSCustomProp(COLOR_MODE_KEY);
-      const newMode = currentMode === "dark" ? "light" : "dark";
-      localStorage.setItem(STORAGE_KEY, newMode);
-      return newMode;
-   };
-
-   modeToggleButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      applySetting(toggleSetting());
-   });
-
-   applySetting();
-  </script>
 
 </body>
 

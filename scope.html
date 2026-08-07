@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Not sure what kind of software you need? Use this interactive wizard to scope your project and get a clear idea of platform, features, and complexity before contacting us." />
+  <meta name="keywords"
+    content="project scoping, software planning, custom software, decision tree, project brief, Erongo Software" />
+
+  <meta property="og:title" content="Scope Your Project | Erongo Software">
+  <meta property="og:description"
+    content="Answer a few questions to get a semi-fleshed project brief with platform recommendations and complexity estimates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://erongo.net/scope">
+  <meta property="og:site_name" content="Erongo Software">
+  <meta property="og:image" content="https://erongo.net/img/og-card.svg">
+  <meta property="og:image:alt" content="Branded overview card for Erongo Software">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scope Your Project | Erongo Software">
+  <meta name="twitter:description"
+    content="Answer a few questions to get a semi-fleshed project brief with platform recommendations and complexity estimates.">
+  <meta name="twitter:image" content="https://erongo.net/img/og-card.svg">
+
+  <meta name="robots" content="index,follow">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Erongo Software">
+  <meta name="theme-color" content="#1a1d21">
+
+  <link rel="canonical" href="https://erongo.net/scope">
+
+  <title>Scope Your Project | Erongo Software</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('erongo-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="page-container">
+    <header class="site-header">
+      <nav aria-label="Main Navigation">
+        <div class="branding">
+          <p class="brand-name"><a href="/" aria-label="Erongo Software Home">erongo<span
+                class="title-dot">.</span></a>
+          </p>
+        </div>
+        <div class="nav-actions">
+          <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#products">Products</a></li>
+            <li><a href="/#commercial">Past Projects</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+          <ul class="social-icon">
+            <li>
+              <a href="https://github.com/erongo" target="_blank" rel="noopener" aria-label="GitHub profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"
+                  class="social-svg">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@erongo.net?subject=Enterprise%20software%20enquiry"
+                aria-label="Email Erongo Software">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"
+                  aria-hidden="true" class="social-svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <button class="theme-toggle" aria-label="Switch theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="panel-stack">
+
+        <section class="panel wizard-panel" aria-labelledby="wizard-heading">
+          <p class="card-kicker">Project Scoping Wizard</p>
+          <h1 id="wizard-heading">Not sure what you need? Let's figure it out.</h1>
+          <p class="section-intro">Answer a few questions and we'll generate a project brief you can send to us — or use to get clarity before booking a call.</p>
+
+          <div class="wizard-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="6">
+            <div class="wizard-progress-bar" style="width: 16.6%"></div>
+            <span class="wizard-progress-text">Step 1 of 6</span>
+          </div>
+
+          <form id="wizard-form" class="wizard-form" novalidate>
+
+            <!-- Step 1: What are you trying to build? -->
+            <fieldset class="wizard-step active" data-step="1">
+              <legend class="visually-hidden">What are you trying to build?</legend>
+              <h2 class="wizard-question">What are you trying to build?</h2>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="customer-facing">
+                  <input type="radio" name="project_type" value="customer-facing" required>
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">A website or app my customers use</span>
+                    <span class="wizard-option-desc">Something the public or your clients interact with — like a store, booking system, or portal.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="internal-tool">
+                  <input type="radio" name="project_type" value="internal-tool">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">An internal tool for my team</span>
+                    <span class="wizard-option-desc">Something your employees use daily — like a dashboard, CRM, or inventory tracker.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="integration">
+                  <input type="radio" name="project_type" value="integration">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Connect two systems that don't talk</span>
+                    <span class="wizard-option-desc">Make your existing software share data — like syncing your accounting with your warehouse system.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="automation">
+                  <input type="radio" name="project_type" value="automation">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Automate a repetitive process</span>
+                    <span class="wizard-option-desc">Replace manual work — like auto-generating reports, processing invoices, or sending notifications.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="unsure">
+                  <input type="radio" name="project_type" value="unsure">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">I'm not sure yet</span>
+                    <span class="wizard-option-desc">I have a problem but haven't figured out the solution. Let's start with a conversation.</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Step 2A: Customer-facing audience -->
+            <fieldset class="wizard-step" data-step="2a">
+              <legend class="visually-hidden">Who will use this?</legend>
+              <h2 class="wizard-question">Who will be using this?</h2>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="consumers">
+                  <input type="radio" name="audience" value="consumers">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">End consumers (regular people)</span>
+                    <span class="wizard-option-desc">Like a restaurant ordering app or a retail store.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="businesses">
+                  <input type="radio" name="audience" value="businesses">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Other businesses</span>
+                    <span class="wizard-option-desc">Like a supplier portal or a B2B marketplace.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="both">
+                  <input type="radio" name="audience" value="both">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Both</span>
+                    <span class="wizard-option-desc">Like a platform where businesses list products and consumers buy them.</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Step 2B: Internal tool purpose -->
+            <fieldset class="wizard-step" data-step="2b">
+              <legend class="visually-hidden">What should this tool do?</legend>
+              <h2 class="wizard-question">What should this tool do?</h2>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="track-data">
+                  <input type="radio" name="internal_purpose" value="track-data">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Track data or manage records</span>
+                    <span class="wizard-option-desc">Like a CRM, inventory system, or customer database.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="dashboards">
+                  <input type="radio" name="internal_purpose" value="dashboards">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Dashboards and reporting</span>
+                    <span class="wizard-option-desc">Visualize data, track KPIs, generate reports.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="workflow">
+                  <input type="radio" name="internal_purpose" value="workflow">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Workflow or task management</span>
+                    <span class="wizard-option-desc">Approvals, assignments, tracking who's doing what.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="internal-other">
+                  <input type="radio" name="internal_purpose" value="internal-other">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Something else</span>
+                    <span class="wizard-option-desc">We'll ask you to describe it in the next step.</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Step 2Z: Unsure path -->
+            <fieldset class="wizard-step" data-step="2z">
+              <legend class="visually-hidden">Describe your problem</legend>
+              <h2 class="wizard-question">What problem are you trying to solve?</h2>
+              <p class="wizard-hint">Don't worry about technical details. Just describe the situation in your own words — what's frustrating, what's taking too long, or what opportunity you want to capture.</p>
+              <div class="wizard-input-group">
+                <textarea id="problem_description" name="problem_description" class="wizard-textarea" placeholder="E.g. 'We spend 3 hours every morning compiling sales data from 5 different spreadsheets...'"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Step 3: Platform -->
+            <fieldset class="wizard-step" data-step="3">
+              <legend class="visually-hidden">How should people access this?</legend>
+              <h2 class="wizard-question">How should people access this?</h2>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="web">
+                  <input type="radio" name="platform" value="web">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Web browser</span>
+                    <span class="wizard-option-desc">Works on desktop and mobile browsers. No installation needed.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="desktop">
+                  <input type="radio" name="platform" value="desktop">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Desktop application</span>
+                    <span class="wizard-option-desc">Installed on a computer. Good for offline work or heavy processing.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="mobile">
+                  <input type="radio" name="platform" value="mobile">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Mobile app</span>
+                    <span class="wizard-option-desc">Native iOS or Android app for phones and tablets.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="api">
+                  <input type="radio" name="platform" value="api">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">API only (no user interface)</span>
+                    <span class="wizard-option-desc">Backend service that other software connects to.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="recommend">
+                  <input type="radio" name="platform" value="recommend">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Not sure — recommend for me</span>
+                    <span class="wizard-option-desc">We'll suggest the best fit based on your answers.</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Step 4: Features checklist -->
+            <fieldset class="wizard-step" data-step="4">
+              <legend class="visually-hidden">What features do you need?</legend>
+              <h2 class="wizard-question">What features do you need?</h2>
+              <p class="wizard-hint">Pick everything that applies. You can always add more later.</p>
+              <div class="wizard-chips">
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="user-accounts">
+                  <span>User accounts / login</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="payments">
+                  <span>Payments / billing</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="file-uploads">
+                  <span>File uploads / documents</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="search">
+                  <span>Search / filtering</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="notifications">
+                  <span>Real-time notifications</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="admin-dashboard">
+                  <span>Admin dashboard</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="third-party-integrations">
+                  <span>Third-party integrations</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="ai-features">
+                  <span>AI features (search, extraction, recommendations)</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="multi-language">
+                  <span>Multiple languages</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="features" value="reporting">
+                  <span>Reports / exports</span>
+                </label>
+              </div>
+              <div class="wizard-input-group wizard-input-inline">
+                <input type="text" id="feature_other" name="feature_other" class="wizard-text-input" placeholder="Other feature (type and press Add)">
+                <button type="button" class="btn btn-sm" id="add-feature-btn">Add</button>
+              </div>
+              <div id="custom-features" class="wizard-custom-chips"></div>
+            </fieldset>
+
+            <!-- Step 5: Requirements -->
+            <fieldset class="wizard-step" data-step="5">
+              <legend class="visually-hidden">Any hard requirements?</legend>
+              <h2 class="wizard-question">Any hard requirements or constraints?</h2>
+              <p class="wizard-hint">These affect the architecture and timeline. Pick everything that applies.</p>
+              <div class="wizard-chips">
+                <label class="wizard-chip">
+                  <input type="checkbox" name="requirements" value="compliance">
+                  <span>Must comply with regulations (GDPR, HIPAA, etc.)</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="requirements" value="sensitive-data">
+                  <span>Must handle sensitive data</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="requirements" value="existing-software">
+                  <span>Must integrate with existing software</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="requirements" value="high-scale">
+                  <span>Must handle high traffic or large data volumes</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="requirements" value="offline">
+                  <span>Must work offline</span>
+                </label>
+                <label class="wizard-chip">
+                  <input type="checkbox" name="requirements" value="specific-tech">
+                  <span>Must use specific technology or platform</span>
+                </label>
+              </div>
+              <div class="wizard-input-group">
+                <textarea id="requirements_other" name="requirements_other" class="wizard-textarea" placeholder="Any other requirements or constraints..." rows="3"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Step 6: Timeline & budget -->
+            <fieldset class="wizard-step" data-step="6">
+              <legend class="visually-hidden">Timeline and budget sense</legend>
+              <h2 class="wizard-question">When do you need this?</h2>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="asap">
+                  <input type="radio" name="timeline" value="asap">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">ASAP</span>
+                    <span class="wizard-option-desc">This is urgent. We'll need to prioritize and possibly phase the delivery.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="1-3-months">
+                  <input type="radio" name="timeline" value="1-3-months">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Within 1–3 months</span>
+                    <span class="wizard-option-desc">Reasonable for a focused project with clear scope.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="3-6-months">
+                  <input type="radio" name="timeline" value="3-6-months">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Within 3–6 months</span>
+                    <span class="wizard-option-desc">Comfortable timeline for a well-built solution.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="flexible">
+                  <input type="radio" name="timeline" value="flexible">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Flexible</span>
+                    <span class="wizard-option-desc">Quality matters more than speed. We'll take the time to do it right.</span>
+                  </span>
+                </label>
+              </div>
+
+              <h2 class="wizard-question" style="margin-top: 1.5rem;">Rough budget sense?</h2>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="exploring">
+                  <input type="radio" name="budget" value="exploring">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Just exploring</span>
+                    <span class="wizard-option-desc">I want to understand what's possible before committing.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="small">
+                  <input type="radio" name="budget" value="small">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Small project</span>
+                    <span class="wizard-option-desc">Focused scope, limited features, quick turnaround.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="medium">
+                  <input type="radio" name="budget" value="medium">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Medium investment</span>
+                    <span class="wizard-option-desc">Room for a proper solution with multiple features.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="enterprise">
+                  <input type="radio" name="budget" value="enterprise">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Enterprise scale</span>
+                    <span class="wizard-option-desc">Complex system, multiple integrations, long-term partnership.</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Summary step -->
+            <fieldset class="wizard-step" data-step="summary">
+              <legend class="visually-hidden">Your project brief</legend>
+              <h2 class="wizard-question">Your project brief</h2>
+              <p class="wizard-hint">Here's what we put together based on your answers. Review it, then send it to us or book a call to discuss.</p>
+
+              <div id="wizard-summary" class="wizard-summary">
+                <!-- Filled in by JS -->
+              </div>
+
+              <div class="wizard-summary-actions">
+                <a id="send-email-btn" href="#" class="btn btn-primary">Send brief via email</a>
+                <a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" class="btn" target="_blank" rel="noopener">Book a call instead</a>
+                <button type="button" class="btn btn-ghost" id="restart-wizard-btn">Start over</button>
+              </div>
+            </fieldset>
+
+            <!-- Navigation buttons -->
+            <div class="wizard-nav">
+              <button type="button" class="btn btn-ghost" id="wizard-back" style="display: none;">Back</button>
+              <button type="button" class="btn btn-primary" id="wizard-next">Next</button>
+            </div>
+
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Erongo Software</p>
+      <p><a href="mailto:contact@erongo.net">contact@erongo.net</a> · <a href="https://github.com/erongo"
+          target="_blank" rel="noopener">GitHub</a> · <a href="https://calendar.app.google/wCDSxwcUXTgJguqd6"
+          target="_blank" rel="noopener">Book A Call</a></p>
+    </footer>
+  </div>
+
+  <script src="theme.js"></script>
+  <script>
+    (() => {
+      'use strict';
+
+      // --- State ---
+      const state = {
+        currentStep: 1,
+        stepOrder: [],
+        answers: {},
+        customFeatures: []
+      };
+
+      // --- Step routing map ---
+      // Each key is a step ID, each value defines the next step based on the answer
+      const routing = {
+        1: (answers) => {
+          switch (answers.project_type) {
+            case 'customer-facing': return '2a';
+            case 'internal-tool': return '2b';
+            case 'integration': return '3';
+            case 'automation': return '3';
+            case 'unsure': return '2z';
+            default: return '3';
+          }
+        },
+        '2a': () => '3',
+        '2b': () => '3',
+        '2z': () => '6', // Skip platform, features, requirements for unsure path — go straight to timeline
+        3: () => '4',
+        4: () => '5',
+        5: () => '6',
+        6: () => 'summary'
+      };
+
+      // --- Step labels for progress ---
+      const stepLabels = {
+        1: 'What you\'re building',
+        '2a': 'Your audience',
+        '2b': 'Tool purpose',
+        '2z': 'Your problem',
+        3: 'Platform',
+        4: 'Features',
+        5: 'Requirements',
+        6: 'Timeline & budget',
+        'summary': 'Your brief'
+      };
+
+      // --- DOM refs ---
+      const form = document.getElementById('wizard-form');
+      const nextBtn = document.getElementById('wizard-next');
+      const backBtn = document.getElementById('wizard-back');
+      const progress = document.querySelector('.wizard-progress');
+      const progressBar = document.querySelector('.wizard-progress-bar');
+      const progressText = document.querySelector('.wizard-progress-text');
+      const summaryDiv = document.getElementById('wizard-summary');
+      const emailBtn = document.getElementById('send-email-btn');
+      const restartBtn = document.getElementById('restart-wizard-btn');
+      const addFeatureBtn = document.getElementById('add-feature-btn');
+      const customFeaturesDiv = document.getElementById('custom-features');
+
+      // --- Build step order based on routing ---
+      function buildStepOrder() {
+        state.stepOrder = [];
+        let current = 1;
+        const visited = new Set();
+
+        while (current && !visited.has(current)) {
+          visited.add(current);
+          state.stepOrder.push(current);
+
+          // For dynamic routing, we need to follow the path based on current answers
+          const routeFn = routing[current];
+          if (routeFn) {
+            current = routeFn(state.answers);
+          } else {
+            current = null;
+          }
+        }
+
+        return state.stepOrder;
+      }
+
+      // --- Show/hide steps ---
+      function showStep(stepId) {
+        const steps = form.querySelectorAll('.wizard-step');
+        steps.forEach(s => {
+          s.classList.remove('active');
+          s.setAttribute('aria-hidden', 'true');
+        });
+
+        const target = form.querySelector(`[data-step="${stepId}"]`);
+        if (target) {
+          target.classList.add('active');
+          target.setAttribute('aria-hidden', 'false');
+          state.currentStep = stepId;
+        }
+
+        updateProgress();
+        updateNav();
+      }
+
+      // --- Update progress bar ---
+      function updateProgress() {
+        // Rebuild step order to account for current routing
+        const order = buildStepOrder();
+        const currentIndex = order.indexOf(state.currentStep);
+        const total = order.length;
+
+        if (progress) {
+          const pct = ((currentIndex + 1) / total) * 100;
+          progressBar.style.width = pct + '%';
+          progressText.textContent = `Step ${currentIndex + 1} of ${total}`;
+          progress.setAttribute('aria-valuenow', currentIndex + 1);
+          progress.setAttribute('aria-valuemax', total);
+        }
+      }
+
+      // --- Update nav buttons ---
+      function updateNav() {
+        const order = buildStepOrder();
+        const currentIndex = order.indexOf(state.currentStep);
+
+        // Back button
+        if (currentIndex <= 0) {
+          backBtn.style.display = 'none';
+        } else {
+          backBtn.style.display = 'inline-flex';
+        }
+
+        // Next button
+        if (state.currentStep === 'summary') {
+          nextBtn.style.display = 'none';
+          backBtn.style.display = 'none';
+        } else {
+          nextBtn.style.display = 'inline-flex';
+          nextBtn.textContent = currentIndex === order.length - 1 ? 'Generate brief' : 'Next';
+        }
+      }
+
+      // --- Collect answers from current step ---
+      function collectAnswers(stepId) {
+        const step = form.querySelector(`[data-step="${stepId}"]`);
+        if (!step) return false;
+
+        // Radio buttons
+        const radios = step.querySelectorAll('input[type="radio"]:checked');
+        radios.forEach(r => {
+          state.answers[r.name] = r.value;
+        });
+
+        // Checkboxes
+        const checkboxes = step.querySelectorAll('input[type="checkbox"]:checked');
+        const checkedNames = {};
+        checkboxes.forEach(cb => {
+          if (!checkedNames[cb.name]) checkedNames[cb.name] = [];
+          checkedNames[cb.name].push(cb.value);
+        });
+        Object.assign(state.answers, checkedNames);
+
+        // Textareas and text inputs
+        const textareas = step.querySelectorAll('textarea');
+        textareas.forEach(ta => {
+          if (ta.value.trim()) {
+            state.answers[ta.name] = ta.value.trim();
+          }
+        });
+
+        // Validation: check if required radio is answered
+        const requiredRadios = step.querySelectorAll('input[type="radio"][required]');
+        if (requiredRadios.length > 0) {
+          const name = requiredRadios[0].name;
+          if (!state.answers[name]) {
+            return false;
+          }
+        }
+
+        // For step 2z (unsure path), require problem description
+        if (stepId === '2z' && !state.answers.problem_description) {
+          return false;
+        }
+
+        // For step 6, require timeline and budget
+        if (stepId === 6) {
+          if (!state.answers.timeline || !state.answers.budget) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      // --- Navigate ---
+      function goNext() {
+        if (!collectAnswers(state.currentStep)) {
+          // Shake the current step as visual feedback
+          const step = form.querySelector(`[data-step="${state.currentStep}"]`);
+          if (step) {
+            step.classList.add('wizard-step-shake');
+            setTimeout(() => step.classList.remove('wizard-step-shake'), 500);
+          }
+          return;
+        }
+
+        const routeFn = routing[state.currentStep];
+        if (routeFn) {
+          const nextStep = routeFn(state.answers);
+          // Rebuild step order since routing may have changed
+          buildStepOrder();
+          showStep(nextStep);
+
+          if (nextStep === 'summary') {
+            generateSummary();
+          }
+        }
+      }
+
+      function goBack() {
+        const order = buildStepOrder();
+        const currentIndex = order.indexOf(state.currentStep);
+        if (currentIndex > 0) {
+          showStep(order[currentIndex - 1]);
+        }
+      }
+
+      // --- Platform recommendation ---
+      function recommendPlatform() {
+        const type = state.answers.project_type;
+        if (!type) return 'Web browser (recommended)';
+
+        switch (type) {
+          case 'customer-facing':
+            return 'Web browser — best reach, works on any device without installation';
+          case 'internal-tool':
+            return 'Web browser — easy to deploy, update, and access from any computer';
+          case 'integration':
+            return 'API-only — no user interface needed, just reliable system-to-system connections';
+          case 'automation':
+            return 'API-only or web dashboard — automated backend with an optional monitoring interface';
+          case 'unsure':
+            return 'To be discussed — we\'ll recommend the best fit after understanding your problem';
+          default:
+            return 'Web browser (recommended)';
+        }
+      }
+
+      // --- Complexity scoring ---
+      function calculateComplexity() {
+        let score = 0;
+        const reasons = [];
+
+        // Base score by project type
+        const type = state.answers.project_type;
+        if (type === 'customer-facing') score += 2;
+        else if (type === 'internal-tool') score += 1;
+        else if (type === 'integration') score += 1;
+        else if (type === 'automation') score += 1;
+        else if (type === 'unsure') score += 0;
+
+        // Features
+        const features = state.answers.features || [];
+        const totalFeatures = features.length + state.customFeatures.length;
+        if (totalFeatures >= 5) { score += 3; reasons.push('many features'); }
+        else if (totalFeatures >= 3) { score += 2; reasons.push('multiple features'); }
+        else if (totalFeatures >= 1) { score += 1; }
+
+        // Specific complex features
+        if (features.includes('payments')) { score += 1; reasons.push('payment processing'); }
+        if (features.includes('ai-features')) { score += 1; reasons.push('AI features'); }
+        if (features.includes('notifications')) { score += 1; reasons.push('real-time features'); }
+        if (features.includes('third-party-integrations')) { score += 1; reasons.push('third-party integrations'); }
+
+        // Requirements
+        const requirements = state.answers.requirements || [];
+        if (requirements.includes('compliance')) { score += 2; reasons.push('regulatory compliance'); }
+        if (requirements.includes('sensitive-data')) { score += 1; reasons.push('sensitive data handling'); }
+        if (requirements.includes('high-scale')) { score += 1; reasons.push('high scale requirements'); }
+        if (requirements.includes('offline')) { score += 1; reasons.push('offline capability'); }
+        if (requirements.includes('existing-software')) { score += 1; reasons.push('existing system integration'); }
+
+        // Platform complexity
+        const platform = state.answers.platform;
+        if (platform === 'mobile') score += 1;
+        if (platform === 'desktop') score += 1;
+
+        // Determine tier
+        if (score >= 7) return { tier: 'Large', label: '🔴 Large', desc: 'This is a substantial project with multiple moving parts. It will likely involve phased delivery over several months.', reasons };
+        if (score >= 4) return { tier: 'Medium', label: '🟡 Medium', desc: 'This is a solid project with meaningful scope. Expect a focused build over a few weeks to months.', reasons };
+        return { tier: 'Small', label: '🟢 Small', desc: 'This is a focused project with a clear scope. Good candidate for a quick turnaround.', reasons };
+      }
+
+      // --- Generate summary ---
+      function generateSummary() {
+        const complexity = calculateComplexity();
+        const platform = !state.answers.platform || state.answers.platform === 'recommend'
+          ? recommendPlatform()
+          : formatPlatform(state.answers.platform);
+
+        const features = state.answers.features || [];
+        const allFeatures = [...features, ...state.customFeatures];
+        const requirements = state.answers.requirements || [];
+
+        // Build plain-language project type
+        let projectType = '';
+        switch (state.answers.project_type) {
+          case 'customer-facing':
+            const audience = state.answers.audience === 'consumers' ? 'consumer-facing' : state.answers.audience === 'businesses' ? 'business-facing' : 'dual-audience';
+            projectType = `${audience} web application`;
+            break;
+          case 'internal-tool':
+            const purpose = state.answers.internal_purpose;
+            projectType = purpose === 'track-data' ? 'internal data management tool' :
+              purpose === 'dashboards' ? 'internal dashboard and reporting system' :
+                purpose === 'workflow' ? 'internal workflow management system' :
+                  'internal business tool';
+            break;
+          case 'integration':
+            projectType = 'system integration';
+            break;
+          case 'automation':
+            projectType = 'process automation';
+            break;
+          case 'unsure':
+            projectType = 'to be determined during discovery';
+            break;
+        }
+
+        // Build summary HTML
+        let html = `
+          <div class="wizard-summary-card">
+            <div class="wizard-summary-section">
+              <h3>Project Type</h3>
+              <p>${capitalize(projectType)}</p>
+            </div>
+            <div class="wizard-summary-section">
+              <h3>Platform</h3>
+              <p>${platform}</p>
+            </div>`;
+
+        if (allFeatures.length > 0) {
+          html += `
+            <div class="wizard-summary-section">
+              <h3>Features</h3>
+              <ul class="wizard-summary-list">
+                ${allFeatures.map(f => `<li>${formatFeatureLabel(f)}</li>`).join('')}
+              </ul>
+            </div>`;
+        }
+
+        if (requirements.length > 0) {
+          html += `
+            <div class="wizard-summary-section">
+              <h3>Requirements</h3>
+              <ul class="wizard-summary-list">
+                ${requirements.map(r => `<li>${formatRequirementLabel(r)}</li>`).join('')}
+              </ul>
+            </div>`;
+        }
+
+        if (state.answers.requirements_other) {
+          html += `
+            <div class="wizard-summary-section">
+              <h3>Additional Notes</h3>
+              <p>${escapeHtml(state.answers.requirements_other)}</p>
+            </div>`;
+        }
+
+        if (state.answers.problem_description) {
+          html += `
+            <div class="wizard-summary-section">
+              <h3>Problem Description</h3>
+              <p>${escapeHtml(state.answers.problem_description)}</p>
+            </div>`;
+        }
+
+        html += `
+            <div class="wizard-summary-section wizard-summary-complexity">
+              <h3>Estimated Complexity</h3>
+              <p class="complexity-tier">${complexity.label}</p>
+              <p>${complexity.desc}</p>
+              ${complexity.reasons.length > 0 ? `<p class="complexity-reasons">Based on: ${complexity.reasons.join(', ')}</p>` : ''}
+            </div>`;
+
+        if (state.answers.timeline) {
+          html += `
+            <div class="wizard-summary-section">
+              <h3>Timeline</h3>
+              <p>${formatTimeline(state.answers.timeline)}</p>
+            </div>`;
+        }
+
+        if (state.answers.budget) {
+          html += `
+            <div class="wizard-summary-section">
+              <h3>Budget Sense</h3>
+              <p>${formatBudget(state.answers.budget)}</p>
+            </div>`;
+        }
+
+        html += `</div>`;
+        summaryDiv.innerHTML = html;
+
+        // Build mailto link
+        buildEmailLink(projectType, platform, allFeatures, requirements, complexity);
+      }
+
+      function buildEmailLink(projectType, platform, features, requirements, complexity) {
+        const lines = [
+          'Project Brief (from erongo.net scoping wizard)',
+          '',
+          `Project Type: ${projectType}`,
+          `Platform: ${platform}`,
+        ];
+
+        if (features.length > 0) {
+          lines.push(`Features: ${features.map(f => formatFeatureLabel(f)).join(', ')}`);
+        }
+
+        if (requirements.length > 0) {
+          lines.push(`Requirements: ${requirements.map(r => formatRequirementLabel(r)).join(', ')}`);
+        }
+
+        if (state.answers.requirements_other) {
+          lines.push(`Additional Notes: ${state.answers.requirements_other}`);
+        }
+
+        if (state.answers.problem_description) {
+          lines.push(`Problem: ${state.answers.problem_description}`);
+        }
+
+        lines.push('');
+        lines.push(`Complexity: ${complexity.tier} — ${complexity.desc}`);
+
+        if (state.answers.timeline) {
+          lines.push(`Timeline: ${formatTimeline(state.answers.timeline)}`);
+        }
+
+        if (state.answers.budget) {
+          lines.push(`Budget: ${formatBudget(state.answers.budget)}`);
+        }
+
+        lines.push('');
+        lines.push('I\'d like to discuss this project further.');
+
+        const subject = encodeURIComponent(`Project Enquiry: ${projectType}`);
+        const body = encodeURIComponent(lines.join('\n'));
+        emailBtn.href = `mailto:contact@erongo.net?subject=${subject}&body=${body}`;
+      }
+
+      // --- Formatting helpers ---
+      function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+      function escapeHtml(s) {
+        const div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function formatPlatform(val) {
+        const map = {
+          'web': 'Web browser (desktop + mobile)',
+          'desktop': 'Desktop application',
+          'mobile': 'Mobile app (iOS / Android)',
+          'api': 'API-only (backend service)',
+          'recommend': 'To be recommended'
+        };
+        return map[val] || val;
+      }
+
+      function formatFeatureLabel(val) {
+        const map = {
+          'user-accounts': 'User accounts / login',
+          'payments': 'Payments / billing',
+          'file-uploads': 'File uploads / documents',
+          'search': 'Search / filtering',
+          'notifications': 'Real-time notifications',
+          'admin-dashboard': 'Admin dashboard',
+          'third-party-integrations': 'Third-party integrations',
+          'ai-features': 'AI features',
+          'multi-language': 'Multiple languages',
+          'reporting': 'Reports / exports'
+        };
+        return map[val] || capitalize(val.replace(/-/g, ' '));
+      }
+
+      function formatRequirementLabel(val) {
+        const map = {
+          'compliance': 'Regulatory compliance',
+          'sensitive-data': 'Sensitive data handling',
+          'existing-software': 'Existing software integration',
+          'high-scale': 'High traffic / large data volumes',
+          'offline': 'Offline capability',
+          'specific-tech': 'Specific technology requirement'
+        };
+        return map[val] || val;
+      }
+
+      function formatTimeline(val) {
+        const map = {
+          'asap': 'ASAP — urgent',
+          '1-3-months': 'Within 1–3 months',
+          '3-6-months': 'Within 3–6 months',
+          'flexible': 'Flexible'
+        };
+        return map[val] || val;
+      }
+
+      function formatBudget(val) {
+        const map = {
+          'exploring': 'Just exploring',
+          'small': 'Small project',
+          'medium': 'Medium investment',
+          'enterprise': 'Enterprise scale'
+        };
+        return map[val] || val;
+      }
+
+      // --- Custom features ---
+      function addCustomFeature() {
+        const input = document.getElementById('feature_other');
+        const value = input.value.trim();
+        if (!value) return;
+
+        state.customFeatures.push(value);
+        input.value = '';
+
+        // Render chip
+        const chip = document.createElement('span');
+        chip.className = 'wizard-chip wizard-chip-added';
+        chip.innerHTML = `<span>${escapeHtml(value)}</span><button type="button" class="wizard-chip-remove" data-feature="${escapeHtml(value)}">&times;</button>`;
+        customFeaturesDiv.appendChild(chip);
+      }
+
+      function removeCustomFeature(feature) {
+        state.customFeatures = state.customFeatures.filter(f => f !== feature);
+        renderCustomFeatures();
+      }
+
+      function renderCustomFeatures() {
+        customFeaturesDiv.innerHTML = '';
+        state.customFeatures.forEach(feature => {
+          const chip = document.createElement('span');
+          chip.className = 'wizard-chip wizard-chip-added';
+          chip.innerHTML = `<span>${escapeHtml(feature)}</span><button type="button" class="wizard-chip-remove" data-feature="${escapeHtml(feature)}">&times;</button>`;
+          customFeaturesDiv.appendChild(chip);
+        });
+      }
+
+      // --- Restart ---
+      function restartWizard() {
+        state.currentStep = 1;
+        state.answers = {};
+        state.customFeatures = [];
+        form.reset();
+        customFeaturesDiv.innerHTML = '';
+        buildStepOrder();
+        showStep(1);
+      }
+
+      // --- Event listeners ---
+      nextBtn.addEventListener('click', goNext);
+      backBtn.addEventListener('click', goBack);
+      restartBtn.addEventListener('click', restartWizard);
+      addFeatureBtn.addEventListener('click', addCustomFeature);
+
+      // Enter key on custom feature input
+      document.getElementById('feature_other').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          addCustomFeature();
+        }
+      });
+
+      // Delegate remove button clicks
+      customFeaturesDiv.addEventListener('click', (e) => {
+        const btn = e.target.closest('.wizard-chip-remove');
+        if (btn) {
+          removeCustomFeature(btn.dataset.feature);
+        }
+      });
+
+      // Radio button selection — highlight selected option
+      form.addEventListener('change', (e) => {
+        if (e.target.type === 'radio') {
+          const fieldset = e.target.closest('.wizard-options');
+          if (fieldset) {
+            fieldset.querySelectorAll('.wizard-option').forEach(opt => opt.classList.remove('selected'));
+            e.target.closest('.wizard-option').classList.add('selected');
+          }
+        }
+        if (e.target.type === 'checkbox') {
+          e.target.closest('.wizard-chip').classList.toggle('selected', e.target.checked);
+        }
+      });
+
+      // Keyboard navigation
+      form.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          // Don't submit on Enter for textareas
+          if (document.activeElement.tagName === 'TEXTAREA') return;
+          e.preventDefault();
+          goNext();
+        }
+      });
+
+      // --- Init ---
+      buildStepOrder();
+      showStep(1);
+    })();
+  </script>
+</body>
+
+</html>

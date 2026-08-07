@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Erongo Software — Custom applications, internal tooling, integrations, and automation</title>
+  <desc id="desc">Social preview card for Erongo Software showing software development services: technical consultation, software delivery, integrations and APIs, and automation with applied AI.</desc>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1d21"/>
+
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#374151" stroke-width="0.5" stroke-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="3" fill="#ff7a45"/>
+
+  <!-- Brand -->
+  <text x="80" y="80" fill="#e5e7eb" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="36" font-weight="600">erongo<tspan fill="#ff7a45">.</tspan></text>
+  <text x="80" y="116" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="17" font-weight="500">Custom applications, internal tooling, integrations, and automation</text>
+
+  <!-- Divider -->
+  <rect x="80" y="140" width="48" height="2" fill="#ff7a45"/>
+
+  <!-- Services label -->
+  <text x="80" y="184" fill="#6b7280" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" letter-spacing="0.08em">SERVICES</text>
+
+  <!-- Service 1 -->
+  <rect x="80" y="210" width="504" height="124" fill="#22262b" stroke="#374151" stroke-width="1" rx="2"/>
+  <rect x="80" y="210" width="3" height="124" fill="#ff7a45"/>
+  <text x="112" y="230" fill="#ff7a45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Early project stage</text>
+  <text x="112" y="265" fill="#e5e7eb" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="600">Technical Consultation</text>
+  <text x="112" y="290" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">Architecture reviews, roadmapping,</text>
+  <text x="112" y="310" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">and technical due diligence.</text>
+
+  <!-- Service 2 -->
+  <rect x="616" y="210" width="504" height="124" fill="#22262b" stroke="#374151" stroke-width="1" rx="2"/>
+  <rect x="616" y="210" width="3" height="124" fill="#ff7a45"/>
+  <text x="648" y="230" fill="#ff7a45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Design through operation</text>
+  <text x="648" y="265" fill="#e5e7eb" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="600">Software Delivery</text>
+  <text x="648" y="290" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">Full-stack platforms, data modeling,</text>
+  <text x="648" y="310" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">CI/CD, and operational tooling.</text>
+
+  <!-- Service 3 -->
+  <rect x="80" y="350" width="504" height="124" fill="#22262b" stroke="#374151" stroke-width="1" rx="2"/>
+  <rect x="80" y="350" width="3" height="124" fill="#ff7a45"/>
+  <text x="112" y="370" fill="#ff7a45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">System connections</text>
+  <text x="112" y="405" fill="#e5e7eb" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="600">Integrations and APIs</text>
+  <text x="112" y="430" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">REST and event-driven APIs, legacy</text>
+  <text x="112" y="450" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">integrations, and data pipelines.</text>
+
+  <!-- Service 4 -->
+  <rect x="616" y="350" width="504" height="124" fill="#22262b" stroke="#374151" stroke-width="1" rx="2"/>
+  <rect x="616" y="350" width="3" height="124" fill="#ff7a45"/>
+  <text x="648" y="370" fill="#ff7a45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Streamline repetitive work</text>
+  <text x="648" y="405" fill="#e5e7eb" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="600">Automation and Applied AI</text>
+  <text x="648" y="430" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">LLM-backed systems, machine learning, document extraction,</text>
+  <text x="648" y="450" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15">semantic search, and workflow AI.</text>
+
+  <!-- Footer -->
+  <text x="80" y="540" fill="#6b7280" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14">Namibia-based · Remote-first</text>
+  <text x="1120" y="540" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" text-anchor="end">erongo.net</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="627" width="1200" height="3" fill="#ff7a45"/>
+</svg>

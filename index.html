@@ -3,45 +3,794 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Parking Page" />
-  <meta name="keywords" content="Parking page" />
+  <meta name="description"
+    content="Erongo Software designs and builds internal platforms, integrations, APIs, and automation for remote-first teams. Based in Namibia, working worldwide." />
+  <meta name="keywords"
+    content="app developer, full-stack engineer, technical architect, systems builder, custom software Namibia, systems integration, workflow automation, platform engineering, Erongo Software" />
+
+  <meta property="og:title" content="Erongo Software | Internal platforms, integrations, and automation">
+  <meta property="og:description"
+    content="Erongo Software designs and builds internal platforms, integrations, APIs, and automation for remote-first teams. Based in Namibia, working worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://erongo.net">
+  <meta property="og:site_name" content="Erongo Software">
+  <meta property="og:image" content="https://erongo.net/img/og-card.svg">
+  <meta property="og:image:alt"
+    content="Branded overview card for Erongo Software showing enterprise software delivery metrics">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Erongo Software | Internal platforms, integrations, and automation">
+  <meta name="twitter:description"
+    content="Erongo Software designs and builds internal platforms, integrations, APIs, and automation for remote-first teams. Based in Namibia, working worldwide.">
+  <meta name="twitter:image" content="https://erongo.net/img/og-card.svg">
+  <meta name="twitter:image:alt"
+    content="Branded overview card for Erongo Software showing enterprise software delivery metrics">
 
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Parking Page">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Landing Page">
-  <meta name="supported-color-schemes" content="dark">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#353">
+  <meta name="apple-mobile-web-app-title" content="Erongo Software">
+  <meta name="theme-color" content="#1a1d21">
 
-  <title>erongo.net | parking page</title>
+  <link rel="canonical" href="https://erongo.net">
 
+  <title>Erongo Software | Internal platforms, integrations, and automation</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://erongo.net/#business",
+        "name": "Erongo Software",
+        "url": "https://erongo.net",
+        "description": "Erongo Software develops custom software solutions in the form of applications, internal tooling, integrations, APIs, and automation. Based in Namibia, delivers worldwide.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Namibia"
+          },
+          {
+            "@type": "Continent",
+            "name": "Africa"
+          }
+        ],
+        "serviceType": [
+          "Technical consultation",
+          "Custom software development",
+          "Systems integration",
+          "Business process automation",
+          "Applied AI implementation"
+        ],
+        "founder": {
+          "@id": "https://erongo.net/#founder"
+        },
+        "sameAs": [
+          "https://github.com/erongo"
+        ],
+        "email": "contact@erongo.net",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@erongo.net",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://erongo.net/#founder",
+        "name": "Marthinus Spangenberg",
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+          "@id": "https://erongo.net/#business"
+        },
+        "sameAs": [
+          "https://github.com/erongo"
+        ],
+        "knowsAbout": [
+          "Full-stack web development",
+          "API design and architecture",
+          "Systems integration",
+          "Business process automation",
+          "Applied AI and machine learning",
+          "Data engineering and modeling",
+          "Database design and management",
+          "Cloud infrastructure and DevOps"
+        ],
+        "description": "Namibia-based, remote-first software engineer with 14 years of programming experience."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://erongo.net/#website",
+        "url": "https://erongo.net",
+        "name": "Erongo Software",
+        "publisher": {
+          "@id": "https://erongo.net/#business"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://erongo.net/#webpage",
+        "url": "https://erongo.net",
+        "name": "Erongo Software | Internal platforms, integrations, and automation",
+        "description": "Erongo Software designs and builds internal platforms, integrations, APIs, and automation for remote-first teams. Based in Namibia, working worldwide.",
+        "isPartOf": {
+          "@id": "https://erongo.net/#website"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://erongo.net/#engineering-services",
+        "name": "Software Development Services",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "Technical Consultation",
+              "description": "Use this service when requirements are unclear or a project needs technical direction. I review the system and recommend a path forward.",
+              "serviceType": "Technical consultation"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "Software Delivery",
+              "description": "I design and build internal software and business systems. I take responsibility from the data model through deployment and operation.",
+              "serviceType": "Custom software development"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "Integrations and APIs",
+              "description": "I connect software to databases and third-party platforms. I design the APIs that keep the integrations stable.",
+              "serviceType": "Systems integration"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "name": "Automation and Applied AI",
+              "description": "I replace repetitive work with automation. I add AI features such as search, extraction, and RAG to reduce manual effort.",
+              "serviceType": "Business process automation"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://erongo.net/#commercial-products",
+        "name": "Commercial Products",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Organization Manager",
+              "url": "https://oms.erongo.net",
+              "description": "An organizational tool to make sense of risk and responsibility in your business structure. It handles departments, positions, functions, employees and provides advanced reporting."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Property Manager",
+              "url": "https://property.erongo.net",
+              "description": "An all-in-one platform for managing properties, staff, and tenants. Provides a single pane of glass for finances, maintenance, and incident records."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Rental Manager",
+              "url": "https://rentals.erongo.net",
+              "description": "A service that connects people who need to rent tools, equipment, and other assets with those who own them. Don't let it sit and rust, rent it out and make a buck!"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://erongo.net/#commercial-projects",
+        "name": "Commercial work",
+        "description": "A selection of some projects I have delivered to customers over the years.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Greenfield Internal Sales Platform",
+              "description": "End-to-end delivery of a Cost-Price-Quote platform for a Namibian ICT company. It is deeply integrated with their existing warehouse and business management systems.",
+              "applicationCategory": "Business Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Air Travel Ticket Tracking System",
+              "description": "Replaced manual systems with a role-gated web dashboard that tracks air travel tickets for internal purposes. Reduced manual admin work and improved booking accuracy.",
+              "applicationCategory": "Business Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Travel Agency Package Generator",
+              "description": "Marketing material automation tool that generates package deals for dissemination on various media platforms. Agents can enter details and ask for output as standardized coupons.",
+              "applicationCategory": "Business Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Online Bulk Meal Ordering Platform",
+              "description": "This platform handles bulk meal orders from the public in a streamlined e-commerce pattern that involves users selecting meals, specifying quantities over MOQ, and scheduling deliveries.",
+              "applicationCategory": "E-commerce"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Delivery Estimation Tool",
+              "description": "This tool allows for the calculation of range costs and delivery windows, and suggests optimal packing for deliveries from geospatial data. Dispatch teams use it to plan routes and levy charges accordingly.",
+              "applicationCategory": "Business Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Fuelstock Forecast Engine",
+              "description": "Predicts demand, constructs inventory forecasts, and generates actionable insights for planners. Helps prevent out-of-supply situations by giving operators timely alerts and recommendations.",
+              "applicationCategory": "Business Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Depot Readings Aggregation",
+              "description": "Collects depot readings for operations across Namibia. Replaced phone-in reporting with a real-time dashboard and depot-side web terminal. Depot managers can see stock levels, deliveries, and consumption trends.",
+              "applicationCategory": "Business Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Stock Recon Tool",
+              "description": "Compares system records with physical stock counts. Flags discrepancies and generates adjustment reports. Reduces the time spent on complicated multi-SKU monthly stock takes and provides standardized output for management to review.",
+              "applicationCategory": "Business Application"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://erongo.net/#public-services",
+        "name": "Public Services",
+        "description": "These services are not monetized and are made available in a best effort capacity. Some services are geo-restricted to prevent abuse.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Code Radio",
+              "url": "https://radio.erongo.net",
+              "description": "This service streams lofi music 24 hours a day, 7 days a week. It supports command line, desktop, and web clients. In order to prevent excessive bandwidth usage, it limits the number of simultaneous connections.",
+              "applicationCategory": "Multimedia Application",
+              "operatingSystem": "Web, Desktop, Command Line"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Daily News Headlines",
+              "url": "https://headlines.erongo.net",
+              "description": "News headlines from Namibia in bite sized pieces. Links back to the original news source. Updated every 15 minutes. This is just an aggregator, please support the original sources so Namibian media can remain strong and independant.",
+              "applicationCategory": "News Application"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Daily Shopping Specials",
+              "url": "https://specials.erongo.net",
+              "description": "Nationwide grocery deals to help find the best prices on the basics. We keep the basket to just the basics and source our information from daily contributions made by regular shoppers and participating retailers.",
+              "applicationCategory": "Shopping Application"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('erongo-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
+  <a href="#main" class="skip-link">Skip to content</a>
   <div class="page-container">
-    <nav>
-      <div class="branding">
-        <h1><a href="/">erongo</a><span class="title-dot">.</span></h1>
-      </div>
-      <ul class="social-icon">
-        <li><a href="https://github.com/erongo"><img src="img/github.svg" alt="https://github.com/erongo"> </a></li>
-      </ul>
-    </nav>
+    <header class="site-header">
+      <nav aria-label="Main Navigation">
+        <div class="branding">
+          <p class="brand-name"><a href="/" aria-label="Erongo Software Home">erongo<span
+                class="title-dot">.</span></a>
+          </p>
+        </div>
+        <div class="nav-actions">
+          <button class="burger-btn" aria-label="Toggle menu" aria-expanded="false">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="/" aria-current="page">Home</a></li>
+            <li><a href="#development">Development</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#commercial">Past Work</a></li>
+            <li><a href="#public">Public Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <ul class="social-icon">
+            <li>
+              <a href="https://github.com/erongo" target="_blank" rel="noopener" aria-label="GitHub profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"
+                  class="social-svg">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@erongo.net?subject=Enterprise%20software%20enquiry"
+                aria-label="Email Erongo Software">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"
+                  aria-hidden="true" class="social-svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li class="theme-toggle-wrapper">
+              <button class="theme-toggle" aria-label="Switch theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-    <main>
+    <main id="main">
+      <div class="site-banner" role="status" aria-live="polite">
+        <p>I am currently taking on new requests.</p>
+      </div>
+      <div class="panel-stack">
+
+        <section class="panel" id="development" aria-labelledby="software-development-services-heading">
+          <h2 class="card-kicker">Software Development Services</h2>
+          <p class="section-intro">I provide technical direction, build the software, and keep it running.</p>
+          <div class="services-list">
+            <article class="service-detail">
+              <p class="card-kicker">Early project stage</p>
+              <h2>Technical Consultation</h2>
+              <p class="service-summary">Use this service when requirements are unclear or a project needs technical direction. I review the system and recommend a path forward.</p>
+              <ul class="service-deliverables">
+                <li>Architecture and technology reviews</li>
+                <li>Build-vs-buy analysis and vendor evaluation</li>
+                <li>Roadmapping and milestone planning</li>
+                <li>Technical due diligence</li>
+              </ul>
+            </article>
+
+            <article class="service-detail">
+              <p class="card-kicker">Design through operation</p>
+              <h2>Software Delivery</h2>
+              <p class="service-summary">I design and build internal software and business systems. I take responsibility from the data model through deployment and operation.</p>
+              <ul class="service-deliverables">
+                <li>Full-stack web applications and internal platforms</li>
+                <li>Data modeling, schema design, and migration</li>
+                <li>Cloud deployment, CI/CD, and operational tooling</li>
+                <li>Testing, observability, and maintenance</li>
+              </ul>
+            </article>
+
+            <article class="service-detail">
+              <p class="card-kicker">System connections</p>
+              <h2>Integrations and APIs</h2>
+              <p class="service-summary">I connect software to databases and third-party platforms. I design the APIs that keep the integrations stable.</p>
+              <ul class="service-deliverables">
+                <li>REST and event-driven API design</li>
+                <li>Third-party and legacy system integrations</li>
+                <li>Data synchronization and pipeline workflows</li>
+                <li>API gateways, authentication, and rate limiting</li>
+              </ul>
+            </article>
+
+            <article class="service-detail">
+              <p class="card-kicker">Streamline repetitive work</p>
+              <h2>Automation and Applied AI</h2>
+              <p class="service-summary">I replace repetitive work with automation. I add AI features such as search, extraction, and RAG to reduce manual effort.</p>
+              <ul class="service-deliverables">
+                <li>Business process automation and orchestration</li>
+                <li>Retrieval-Augmented Generation (RAG) systems</li>
+                <li>Document extraction, classification, and semantic search</li>
+                <li>Machine vision and natural language processing</li>
+              </ul>
+            </article>
+
+          </div>
+
+          <div class="teaser-grid">
+              <article class="service-card">
+                <p class="card-kicker">Full development cycle</p>
+                <h3>Full-Stack Web &amp; Application Development</h3>
+                <p>I build internal platforms and customer-facing applications. I use Python with Flask or FastAPI for backends. I use React or Svelte for frontends. The infrastructure includes CI/CD, monitoring, and automated testing.</p>
+              </article>
+              <article class="service-card">
+                <p class="card-kicker">Backend systems</p>
+                <h3>Backend Services &amp; System Tools</h3>
+                <p>I design APIs, data pipelines, and message queues. I build operational tools that keep systems reliable. The backends have clear contracts, error handling, and observability. They run without constant attention.</p>
+              </article>
+              <article class="service-card">
+                <p class="card-kicker">System connections</p>
+                <h3>System Integration &amp; API Architecture</h3>
+                <p>I connect legacy databases, third-party platforms, and business software. I use REST APIs and event-driven architectures. API gateways and authentication layers keep the integrations secure.</p>
+              </article>
+              <article class="service-card">
+                <p class="card-kicker">AI and automation</p>
+                <h3>Applied AI &amp; Systems Automation</h3>
+                <p>I build RAG knowledge bases, document extraction systems, and semantic search. I use ML for forecasting and workflow automation. The AI features solve specific business problems.</p>
+              </article>
+            </div>
+
+          <div class="contact-wizard-cta">
+            <h2>Not sure what you need?</h2>
+            <a href="/scope.html" class="btn btn-primary">Scope Your Project</a>
+            <p>Answer a few questions and get a ready-to-send project brief.</p>
+          </div>
+        </section>
+
+        <section class="panel" id="products" aria-labelledby="commercial-products-heading">
+          <h2 class="card-kicker">Commercial Products</h2>
+          <p class="section-intro">These are commercial products and services developed by me.</p>
+          <div class="teaser-grid">
+            <article class="service-card clickable">
+              <a href="https://oms.erongo.net" target="_blank" rel="noopener" class="icon-external" aria-label="Open Organization Manager in new tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://oms.erongo.net" target="_blank" rel="noopener" class="card-link" aria-label="Open Organization Manager in new tab"></a>
+              <p class="card-kicker">oms.erongo.net</p>
+              <h3>Organization Manager</h3>
+              <p>An organizational tool to make sense of risk and responsibility in your business structure. It handles departments, positions, functions, employees and provides advanced reporting.</p>
+            </article>
+            <article class="service-card clickable">
+              <a href="https://property.erongo.net" target="_blank" rel="noopener" class="icon-external" aria-label="Open Property Manager in new tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://property.erongo.net" target="_blank" rel="noopener" class="card-link" aria-label="Open Property Manager in new tab"></a>
+              <p class="card-kicker">property.erongo.net</p>
+              <h3>Property Manager</h3>
+              <p>An all-in-one platform for managing properties, staff, and tenants. Provides a single pane of glass for finances, maintenance, and incident records.</p>
+            </article>
+            <article class="service-card clickable">
+              <a href="https://rentals.erongo.net" target="_blank" rel="noopener" class="icon-external" aria-label="Open Rental Manager in new tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://rentals.erongo.net" target="_blank" rel="noopener" class="card-link" aria-label="Open Rental Manager in new tab"></a>
+              <p class="card-kicker">rentals.erongo.net</p>
+              <h3>Rental Manager</h3>
+              <p>A service that connects people who need to rent tools, equipment, and other assets with those who own them. Don't let it sit and rust, rent it out and make a buck!</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="commercial" aria-labelledby="commercial-heading">
+          <div class="section-heading">
+            <h2 class="card-kicker">Commercial work</h2>
+            <p class="projects-intro">A selection of some projects I have delivered to customers over the years.</p>
+          </div>
+          <div class="projects-grid">
+            <article class="service-card">
+              <p class="card-kicker">ICT | Sales</p>
+              <h3>Greenfield Internal Sales Platform</h3>
+              <p>End-to-end delivery of a Cost-Price-Quote platform for a Namibian ICT company. It is deeply integrated with their existing warehouse and business management systems.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">Python</span>
+                <span class="proof-tag">Flask</span>
+                <span class="proof-tag">React</span>
+                <span class="proof-tag">Azure</span>
+                <span class="proof-tag">MSSQL</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Travel | Operations</p>
+              <h3>Air Travel Ticket Tracking System</h3>
+              <p>Replaced manual systems with a role-gated web dashboard that tracks air travel tickets for internal purposes. Reduced manual admin work and improved booking accuracy.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">Python</span>
+                <span class="proof-tag">Flask</span>
+                <span class="proof-tag">Postgres</span>
+                <span class="proof-tag">Digital Ocean</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Travel | Sales</p>
+              <h3>Travel Agency Package Generator</h3>
+              <p>Marketing material automation tool that generates package deals for dissemination on various media platforms. Agents can enter details and ask for output as standardized coupons.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">React</span>
+                <span class="proof-tag">TypeScript</span>
+                <span class="proof-tag">Vite</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Food Service | Sales</p>
+              <h3>Online Bulk Meal Ordering Platform</h3>
+              <p>This platform handles bulk meal orders from the public in a streamlined e-commerce pattern that involves users selecting meals, specifying quantities over MOQ, and scheduling deliveries.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">Postgres</span>
+                <span class="proof-tag">Python</span>
+                <span class="proof-tag">Flask</span>
+                <span class="proof-tag">Pydantic</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Energy | Logistics</p>
+              <h3>Delivery Estimation Tool</h3>
+              <p>This tool allows for the calculation of range costs and delivery windows, and suggests optimal packing for deliveries from geospatial data. Dispatch teams use it to plan routes and levy charges accordingly.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">TypeScript</span>
+                <span class="proof-tag">React</span>
+                <span class="proof-tag">Vite</span>
+                <span class="proof-tag">Leaflet</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Energy | Supply Chain</p>
+              <h3>Fuelstock Forecast Engine</h3>
+              <p>Predicts demand, constructs inventory forecasts, and generates actionable insights for planners. Helps prevent out-of-supply situations by giving operators timely alerts and recommendations.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">Pandas</span>
+                <span class="proof-tag">Pydantic</span>
+                <span class="proof-tag">SciKit-Learn</span>
+                <span class="proof-tag">XGBoost</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Energy | Operations</p>
+              <h3>Depot Readings Aggregation</h3>
+              <p>Collects depot readings for operations across Namibia. Replaced phone-in reporting with a real-time dashboard and depot-side web terminal. Depot managers can see stock levels, deliveries, and consumption trends.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">Vue 3</span>
+                <span class="proof-tag">TailwindCSS</span>
+                <span class="proof-tag">CF Pages</span>
+                <span class="proof-tag">CF Workers</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <p class="card-kicker">Energy | Supply Chain</p>
+              <h3>Stock Recon Tool</h3>
+              <p>Compares system records with physical stock counts. Flags discrepancies and generates adjustment reports. Reduces the time spent on complicated multi-SKU monthly stock takes and provides standardized output for management to review.</p>
+              <div class="proof-tags">
+                <span class="proof-tag">Vite</span>
+                <span class="proof-tag">TypeScript</span>
+                <span class="proof-tag">React</span>
+                <span class="proof-tag">MUI</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="public" aria-labelledby="public-services-heading">
+          <h2 class="card-kicker">Public Services</h2>
+          <p class="section-intro">These services are not monetized and are made available in a best effort capacity. Some services are geo-restricted to prevent abuse. Daily active users (DAU) is self-reported by each application's health metrics.</p>
+          <div class="teaser-grid">
+            <article class="service-card clickable">
+              <a href="https://radio.erongo.net" target="_blank" rel="noopener" class="icon-external" aria-label="Open Code Radio in new tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://radio.erongo.net" target="_blank" rel="noopener" class="card-link" aria-label="Open Code Radio in new tab"></a>
+              <p class="card-kicker">radio.erongo.net | <span class="geo-badge" data-tooltip="Geo-restricted to Namibia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>DAU 0</span></p>
+              <h3>Code Radio</h3>
+              <p>This service streams lofi music 24 hours a day, 7 days a week. It supports command line, desktop, and web clients. In order to prevent excessive bandwidth usage, it limits the number of simultaneous connections.</p>
+            </article>
+            <article class="service-card clickable">
+              <a href="https://headlines.erongo.net" target="_blank" rel="noopener" class="icon-external" aria-label="Open Daily Headlines in new tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://headlines.erongo.net" target="_blank" rel="noopener" class="card-link" aria-label="Open Daily Headlines in new tab"></a>
+              <p class="card-kicker">headlines.erongo.net | <span class="geo-badge" data-tooltip="Geo-restricted to none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>DAU 0</span></p>
+              <h3>Daily News Headlines</h3>
+              <p>News headlines from Namibia in bite sized pieces. Links back to the original news source. Updated every 15 minutes. This is just an aggregator, please support the original sources so Namibian media can remain strong and independant.</p>
+            </article>
+            <article class="service-card clickable">
+              <a href="https://specials.erongo.net" target="_blank" rel="noopener" class="icon-external" aria-label="Open Shopping Specials in new tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://specials.erongo.net" target="_blank" rel="noopener" class="card-link" aria-label="Open Shopping Specials in new tab"></a>
+              <p class="card-kicker">specials.erongo.net | <span class="geo-badge" data-tooltip="Geo-restricted to Namibia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>DAU 0</span></p>
+              <h3>Daily Shopping Specials</h3>
+              <p>Nationwide grocery deals to help find the best prices on the basics. We keep the basket to just the basics and source our information from daily contributions made by regular shoppers and participating retailers.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel contact" id="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contact me</h2>
+          <p>Send your requirements. I respond within one business day with the scope, timeline, and cost.</p>
+          <div class="contact-actions">
+            <a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" class="btn btn-primary" target="_blank"
+              rel="noopener">Book a 15-minute call</a>
+            <a href="mailto:contact@erongo.net?subject=Discovery%20call%20request" class="btn">Email
+              instead</a>
+          </div>
+        </section>
+      </div>
     </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Erongo Software</p>
+      <p><a href="mailto:contact@erongo.net">contact@erongo.net</a> · <a href="https://github.com/erongo"
+          target="_blank" rel="noopener">GitHub</a> · <a href="https://calendar.app.google/wCDSxwcUXTgJguqd6"
+          target="_blank" rel="noopener">Book A Call</a></p>
+    </footer>
   </div>
 
+  <script src="theme.js"></script>
+  <script>
+    (() => {
+      const burger = document.querySelector('.burger-btn');
+      const navLinks = document.querySelector('.nav-links');
+      const socialIcon = document.querySelector('.social-icon');
+
+      if (!burger) return;
+
+      burger.addEventListener('click', () => {
+        const isOpen = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!isOpen));
+        navLinks.classList.toggle('is-open');
+        socialIcon.classList.toggle('is-open');
+      });
+
+      // Close menu when clicking a link
+      navLinks.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+        burger.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('is-open');
+        socialIcon.classList.remove('is-open');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const navActions = document.querySelector('.nav-actions');
+        if (!navActions || navActions.contains(e.target)) return;
+        burger.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('is-open');
+        socialIcon.classList.remove('is-open');
+      });
+    })();
+  </script>
+  <script>
+    (() => {
+      const header = document.querySelector('.site-header');
+
+      if (!header) {
+        return;
+      }
+
+      const mobileQuery = window.matchMedia('(max-width: 860px)');
+      let lastScrollY = window.scrollY;
+
+      const syncHeader = () => {
+        if (!mobileQuery.matches) {
+          header.classList.remove('is-hidden');
+          lastScrollY = window.scrollY;
+          return;
+        }
+
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY;
+        const passedThreshold = currentScrollY > 96;
+
+        if (passedThreshold && scrollingDown) {
+          header.classList.add('is-hidden');
+        } else {
+          header.classList.remove('is-hidden');
+        }
+
+        lastScrollY = currentScrollY;
+      };
+
+      window.addEventListener('scroll', syncHeader, { passive: true });
+      window.addEventListener('resize', syncHeader);
+      mobileQuery.addEventListener('change', syncHeader);
+      syncHeader();
+    })();
+  </script>
 </body>
 
 </html>

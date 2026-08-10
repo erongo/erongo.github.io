@@ -684,6 +684,55 @@ main {
   z-index: 2;
 }
 
+.service-card.coming-soon {
+  overflow: hidden;
+}
+
+.service-card.coming-soon:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.service-card.coming-soon > :not(.card-link):not(.icon-external) {
+  filter: blur(1.8px);
+  opacity: 0.7;
+  text-shadow: 0 0 6px color-mix(in srgb, var(--text-primary) 20%, transparent);
+}
+
+.service-card.coming-soon .card-link,
+.service-card.coming-soon .icon-external {
+  pointer-events: none;
+}
+
+.service-card.coming-soon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, #9ca3af 55%, transparent);
+  z-index: 3;
+}
+
+.service-card.coming-soon::after {
+  content: "COMING SOON";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--bg-primary) 78%, transparent);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
 .service-card h3 {
   font-size: 0.85rem;
   margin-top: 0.15rem;

@@ -44,6 +44,34 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://erongo.net/#organization",
+        "name": "Erongo Software",
+        "url": "https://erongo.net",
+        "email": "contact@erongo.net",
+        "sameAs": [
+          "https://github.com/erongo"
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://erongo.net/scope#application",
+        "name": "Scope Your Project",
+        "url": "https://erongo.net/scope",
+        "description": "Answer a few questions to get a semi-fleshed project brief with platform recommendations and complexity estimates.",
+        "applicationCategory": "Project scoping tool",
+        "publisher": {
+          "@id": "https://erongo.net/#organization"
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -59,11 +87,11 @@
         </div>
         <div class="nav-actions">
           <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/#products">Products</a></li>
-            <li><a href="/#commercial">Past Projects</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/">Development</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="commercial.html">Past Work</a></li>
+            <li><a href="infrastructure.html">Infrastructure</a></li>
+            <li><a href="services.html">Public Services</a></li>
           </ul>
           <ul class="social-icon">
             <li>

@@ -116,11 +116,30 @@ ul {
 html {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Inline SVG favicon follows the site theme */
+[data-theme="dark"] .favicon-svg {
+  filter: invert(1);
 }
 
 body {
@@ -180,7 +199,7 @@ ul {
 .panel-stack {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 /* --- Panel --- */
@@ -188,7 +207,7 @@ ul {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 2px;
-  padding: 0.75rem;
+  padding: 1rem;
 }
 
 .panel h2 {
@@ -497,7 +516,7 @@ main {
   color: var(--text-primary);
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   cursor: pointer;
   text-align: center;
   transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
@@ -586,7 +605,7 @@ main {
   font-weight: 700;
   line-height: 1.1;
   color: var(--accent);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .stat-pill .stat-label {
@@ -625,22 +644,22 @@ main {
 .proof-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .services-list + .teaser-grid {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .services-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 /* --- Service Card --- */
 .service-card {
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 2px;
   background: var(--bg-elevated);
@@ -652,8 +671,8 @@ main {
 
 .service-card .icon-external {
   position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
+  top: 0.75rem;
+  right: 0.9rem;
   color: var(--accent);
   opacity: 0.5;
   transition: opacity 120ms ease;
@@ -713,9 +732,16 @@ main {
   margin-bottom: 0.35rem;
 }
 
+/* Redacted teaser text (unreleased products) */
+.service-card.redacted h3,
+.service-card.redacted p:not(.card-kicker) {
+  filter: blur(4px);
+  user-select: none;
+}
+
 /* --- Service Detail (services page) --- */
 .service-detail {
-  padding: 0.75rem;
+  padding: 0.9rem;
   border: 1px solid var(--border);
   border-radius: 2px;
   background: var(--bg-elevated);
@@ -736,7 +762,7 @@ main {
 
 .service-detail .service-deliverables {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.4rem;
   margin-top: 0.5rem;
 }
 
@@ -756,6 +782,73 @@ main {
   height: 5px;
   border-radius: 2px;
   background: var(--accent);
+}
+
+/* --- Phase stepper (work detail) --- */
+.phase-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.phase-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.phase-step::after {
+  content: "→";
+  margin-left: auto;
+  color: var(--accent);
+}
+
+.phase-stepper li:last-child .phase-step::after {
+  content: none;
+}
+
+.phase-step:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+.phase-step-number {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Phase anchors on detail cards */
+#work-detail .service-detail {
+  position: relative;
+  scroll-margin-top: 5rem;
+}
+
+#work-detail .phase-number {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#work-detail .service-deliverables strong {
+  color: var(--text-primary);
 }
 
 /* --- Proof Card --- */
@@ -830,6 +923,21 @@ main {
 }
 
 /* --- Tags --- */
+.version-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-surface);
+  color: var(--text-tertiary);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
 .proof-tags {
   display: flex;
   flex-wrap: wrap;
@@ -848,7 +956,7 @@ main {
   color: var(--text-secondary);
   font-size: 0.68rem;
   font-weight: 600;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   letter-spacing: 0.02em;
 }
 
@@ -1215,6 +1323,14 @@ main a:not(.btn):not(.project-link):not(.nav-links a):focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .phase-stepper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .phase-step::after {
+    content: none;
+  }
+
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1226,7 +1342,7 @@ main a:not(.btn):not(.project-link):not(.nav-links a):focus-visible {
 
 @media (max-width: 640px) {
   html {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .brand-name {
@@ -1493,7 +1609,7 @@ main a:not(.btn):not(.project-link):not(.nav-links a):focus-visible {
   background: var(--bg-input);
   color: var(--text-primary);
   font-size: 0.82rem;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
@@ -1511,7 +1627,7 @@ main a:not(.btn):not(.project-link):not(.nav-links a):focus-visible {
   background: var(--bg-input);
   color: var(--text-primary);
   font-size: 0.82rem;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
   resize: vertical;
   min-height: 80px;
@@ -1637,5 +1753,234 @@ main a:not(.btn):not(.project-link):not(.nav-links a):focus-visible {
   .wizard-summary-actions .btn {
     width: 100%;
     min-width: 0;
+  }
+}
+
+/* ========================================
+   Visual Components — Illustrations, Icons, Callouts
+   ======================================== */
+
+/* --- Hero Split (text + illustration) --- */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.hero-split .hero-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero-frame {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-elevated);
+  padding: 1.25rem 1.5rem 1.1rem;
+  text-align: center;
+}
+
+.hero-frame .hero-title {
+  margin-bottom: 0.9rem;
+}
+
+.hero-frame svg {
+  max-width: 860px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.hero-frame-summary {
+  max-width: none;
+  margin: 0.9rem auto 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.hero-illustration {
+  color: var(--accent);
+}
+
+.hero-illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+/* currentColor must resolve per element so .ill-secondary works */
+.hero-illustration svg * {
+  stroke: currentColor;
+}
+
+.hero-illustration .ill-secondary {
+  color: var(--text-tertiary);
+}
+
+/* --- Card Icon (small themed icon header) --- */
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.card-icon:not(.card-illustration) svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.card-icon svg * {
+  stroke: currentColor;
+}
+
+/* --- Card Media (image header band) --- */
+.card-media {
+  margin: -0.9rem -0.9rem 0.6rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--accent-subtle);
+  border-bottom: 1px solid var(--border);
+}
+
+.service-card .card-media {
+  margin: -0.75rem -0.9rem 0.6rem;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Card Illustration (larger themed visual header) --- */
+.card-illustration {
+  width: 100%;
+  height: auto;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 6.5rem;
+}
+
+.card-illustration .ill-secondary {
+  color: var(--text-tertiary);
+}
+
+/* --- Section Icon (heading adornment) --- */
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.25rem;
+  color: var(--accent);
+}
+
+.section-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Stat Icon --- */
+.stat-icon {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0 auto 0.25rem;
+  color: var(--accent);
+}
+
+/* --- Callout --- */
+.callout {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  margin: 0.75rem 0 0;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--info);
+  border-radius: 2px;
+  background: var(--info-subtle);
+}
+
+.callout-icon {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  color: var(--info);
+}
+
+.callout-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.callout-body {
+  min-width: 0;
+}
+
+.callout-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.callout p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.callout--success {
+  border-left-color: var(--success);
+  background: var(--success-subtle);
+}
+
+.callout--success .callout-icon {
+  color: var(--success);
+}
+
+.callout--warning {
+  border-left-color: var(--warning);
+  background: var(--warning-subtle);
+}
+
+.callout--warning .callout-icon {
+  color: var(--warning);
+}
+
+/* --- Visual Components Responsive --- */
+@media (max-width: 860px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-illustration {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .card-illustration svg {
+    max-height: 7.5rem;
   }
 }

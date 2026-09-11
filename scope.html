@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="Not sure what kind of software you need? Use this interactive wizard to scope your project and get a clear idea of platform, features, and complexity before contacting us." />
+    content="Not sure what kind of software you need? Use this interactive wizard to scope your project and get a clear idea of platform, features, and complexity before contacting Erongo Software." />
   <meta name="keywords"
-    content="project scoping, software planning, custom software, decision tree, project brief, Erongo Software" />
+    content="project scoping, software planning, custom software, project brief, Erongo Software" />
 
   <meta property="og:title" content="Scope Your Project | Erongo Software">
   <meta property="og:description"
@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://erongo.net/scope">
   <meta property="og:site_name" content="Erongo Software">
   <meta property="og:image" content="https://erongo.net/img/og-card.png">
-  <meta property="og:image:alt" content="Branded overview card for Erongo Software">
+  <meta property="og:image:alt" content="Erongo Software - software development and products">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
@@ -31,20 +31,20 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Erongo Software">
+  <meta name="apple-mobile-web-app-title" content="erongo">
   <meta name="theme-color" content="#1a1d21">
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <link rel="canonical" href="https://erongo.net/scope">
 
   <title>Scope Your Project | Erongo Software</title>
 
-  <script>
-    (function () {
-      var t = localStorage.getItem('erongo-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -72,77 +72,48 @@
     ]
   }
   </script>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('erongo-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <div class="page-container">
-    <header class="site-header">
-      <nav aria-label="Main Navigation">
-        <div class="branding">
-          <p class="brand-name"><a href="/" aria-label="Erongo Software Home">erongo<span
-                class="title-dot">.</span></a>
-          </p>
+
+    <header class="site-nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="Erongo Software - home">
+          <span class="brand-mark">erongo<span class="dot">.</span></span>
+          <span class="brand-sub">scope your project</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Back to home</a>
+        </nav>
+
+        <div class="nav-tools">
+          <button class="theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4l1.4-1.4"/></svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
         </div>
-        <div class="nav-actions">
-          <ul class="nav-links">
-            <li><a href="/">Development</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="commercial.html">Past Work</a></li>
-            <li><a href="infrastructure.html">Infrastructure</a></li>
-            <li><a href="services.html">Public Services</a></li>
-          </ul>
-          <ul class="social-icon">
-            <li>
-              <a href="https://github.com/erongo" target="_blank" rel="noopener" aria-label="GitHub profile">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"
-                  class="social-svg">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:contact@erongo.net?subject=Enterprise%20software%20enquiry"
-                aria-label="Email Erongo Software">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"
-                  aria-hidden="true" class="social-svg">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <button class="theme-toggle" aria-label="Switch theme">
-                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <circle cx="12" cy="12" r="5"></circle>
-                  <line x1="12" y1="1" x2="12" y2="3"></line>
-                  <line x1="12" y1="21" x2="12" y2="23"></line>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                  <line x1="1" y1="12" x2="3" y2="12"></line>
-                  <line x1="21" y1="12" x2="23" y2="12"></line>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      </div>
     </header>
 
     <main id="main">
-      <div class="panel-stack">
+      <section class="wizard-section">
+        <div class="container">
 
         <section class="panel wizard-panel" aria-labelledby="wizard-heading">
-          <p class="card-kicker">Project Scoping Wizard</p>
+          <p class="eyebrow">Project scoping wizard</p>
           <h1 id="wizard-heading">Not sure what you need? Let's figure it out.</h1>
-          <p class="section-intro">Answer a few questions and we'll generate a project brief you can send to us, or use to get clarity before booking a call.</p>
+          <p class="wizard-intro">Answer a few questions and we'll generate a project brief you can send to us, or use to get clarity before booking a call.</p>
 
           <div class="wizard-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="6">
             <div class="wizard-progress-bar" style="width: 16.6%"></div>
@@ -495,16 +466,44 @@
 
           </form>
         </section>
-      </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Erongo Software</p>
-      <p><a href="mailto:contact@erongo.net">contact@erongo.net</a> · <a href="https://github.com/erongo"
-          target="_blank" rel="noopener">GitHub</a> · <a href="https://calendar.app.google/wCDSxwcUXTgJguqd6"
-          target="_blank" rel="noopener">Book A Call</a></p>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Erongo Software - home">
+          <span class="brand-mark">erongo<span class="dot">.</span></span>
+        </a>
+        <p>Software development and commercial products. Based in Namibia, delivering worldwide.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Site">
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/#development">Development</a></li>
+          <li><a href="/#products">Products</a></li>
+          <li><a href="/#work">Past work</a></li>
+          <li><a href="/#infrastructure">Infrastructure</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:contact@erongo.net">contact@erongo.net</a></li>
+          <li><a href="https://github.com/erongo" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" target="_blank" rel="noopener">Book a call</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container footer-legal">
+      <p>&copy; <span id="year">2026</span> Erongo Software.</p>
+      <p>Made in Namibia.</p>
+    </div>
     </footer>
-  </div>
 
   <script src="theme.js"></script>
   <script>

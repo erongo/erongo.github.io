@@ -6,29 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="Erongo Software designs and builds custom software — applications, integrations, APIs and automation — plus commercial products such as OMS. Based in Namibia, delivering worldwide.">
+    content="Erongo Software designs and builds custom software -- applications, integrations, APIs and automation -- plus commercial products such as OMS. Based in Namibia, delivering worldwide.">
   <meta name="keywords"
     content="custom software, app developer, full-stack engineer, technical architect, systems integration, workflow automation, applied AI, Erongo Software, Namibia">
 
   <meta property="og:title" content="Erongo Software | Development & products">
   <meta property="og:description"
-    content="Custom software — applications, integrations, APIs and automation — plus commercial products such as OMS. Based in Namibia, delivering worldwide.">
+    content="Custom software -- applications, integrations, APIs and automation -- plus commercial products such as OMS. Based in Namibia, delivering worldwide.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://erongo.net">
   <meta property="og:site_name" content="Erongo Software">
   <meta property="og:image" content="https://erongo.net/img/og-card.png">
   <meta property="og:image:alt"
-    content="Erongo Software — software development and products: consultation, delivery, integrations, automation">
+    content="Erongo Software -- software development and products: consultation, delivery, integrations, automation">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Erongo Software | Development & products">
   <meta name="twitter:description"
-    content="Custom software — applications, integrations, APIs and automation — plus commercial products such as OMS. Based in Namibia, delivering worldwide.">
+    content="Custom software -- applications, integrations, APIs and automation -- plus commercial products such as OMS. Based in Namibia, delivering worldwide.">
   <meta name="twitter:image" content="https://erongo.net/img/og-card.png">
   <meta name="twitter:image:alt"
-    content="Erongo Software — software development and products: consultation, delivery, integrations, automation">
+    content="Erongo Software -- software development and products: consultation, delivery, integrations, automation">
 
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow">
@@ -57,7 +57,7 @@
         "@id": "https://erongo.net/#business",
         "name": "Erongo Software",
         "url": "https://erongo.net",
-        "description": "Erongo Software designs and builds custom software — applications, integrations, APIs and automation — plus commercial products such as OMS. Based in Namibia, delivering worldwide.",
+        "description": "Erongo Software designs and builds custom software -- applications, integrations, APIs and automation -- plus commercial products such as OMS. Based in Namibia, delivering worldwide.",
         "areaServed": [
           { "@type": "Country", "name": "Namibia" },
           { "@type": "Continent", "name": "Africa" }
@@ -109,7 +109,7 @@
         "@id": "https://erongo.net/#webpage",
         "url": "https://erongo.net",
         "name": "Erongo Software | Development & products",
-        "description": "Custom software — applications, integrations, APIs and automation — plus commercial products such as OMS. Based in Namibia, delivering worldwide.",
+        "description": "Custom software -- applications, integrations, APIs and automation -- plus commercial products such as OMS. Based in Namibia, delivering worldwide.",
         "isPartOf": { "@id": "https://erongo.net/#website" }
       },
       {
@@ -169,11 +169,11 @@
             "position": 1,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "OMS — Organisation Management System",
+              "name": "OMS -- Organisation Management System",
               "url": "https://oms-platform.net",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
-              "description": "The organisational governance platform: interactive organograms, RACI accountability, gap & vacancy analysis, bus-factor risk scoring and ISO 9001 compliance — for HR and leadership teams."
+              "description": "The organisational governance platform: interactive organograms, RACI accountability, gap & vacancy analysis, bus-factor risk scoring and ISO 9001 compliance -- for HR and leadership teams."
             }
           }
         ]
@@ -270,36 +270,42 @@
         "@type": "ItemList",
         "@id": "https://erongo.net/#infrastructure",
         "name": "Infrastructure and Resources",
-        "description": "Backend services that make the applications and platforms possible.",
+        "description": "The self-hosted platform behind the website and products: public web properties, product services, a shared data platform, and three managed servers with monitoring, verified backups and 26+ documented runbooks.",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@type": "SoftwareApplication",
-              "name": "API Gateway",
-              "url": "https://api.erongo.net",
-              "description": "Provides external access to all managed resources and integrates deeply with the authentication, logging, and event-streaming backend."
+              "@type": "Service",
+              "name": "Public web properties",
+              "description": "Five public sites: the main website, the OMS platform site, and three product sites in development (Assets, Rentals, Property)."
             }
           },
           {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@type": "SoftwareApplication",
-              "name": "Version Control",
-              "url": "https://git.erongo.net",
-              "description": "The central code-forge: version control, CI/CD, and code collaboration across all erongo.net services."
+              "@type": "Service",
+              "name": "Product services",
+              "description": "An API gateway plus identity and authentication, billing, licensing, support ticketing, a customer portal, and the multi-tenant OMS platform."
             }
           },
           {
             "@type": "ListItem",
             "position": 3,
             "item": {
-              "@type": "SoftwareApplication",
-              "name": "Support",
-              "url": "https://support.erongo.net",
-              "description": "Centralized ticketing for issue handling, service requests, and customer communication."
+              "@type": "Service",
+              "name": "Shared data platform",
+              "description": "PostgreSQL, Redis caching and sessions, NATS JetStream event streaming, S3-compatible object storage, a self-hosted git forge with CI/CD, and optional on-prem GPU AI inference."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "name": "Servers and operations",
+              "description": "Three self-hosted servers (one primary, two workers), hardened and containerized, with centralized monitoring and log aggregation, verified backups, disaster-recovery drills, and 26+ documented runbooks."
             }
           }
         ]
@@ -320,10 +326,10 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- ══════════════════════ Navigation ══════════════════════ -->
+  <!--  Navigation  -->
   <header class="site-nav" id="top">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Erongo Software — back to top">
+      <a class="brand" href="#top" aria-label="Erongo Software -- back to top">
         <span class="brand-mark">erongo<span class="dot">.</span></span>
         <span class="brand-sub">software</span>
       </a>
@@ -351,14 +357,14 @@
 
   <main id="main">
 
-    <!-- ══════════════════════ Hero ══════════════════════ -->
+    <!--  Hero  -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Development &amp; products</p>
-          <h1>From unclear problem<br>to running system.</h1>
+          <h1>From business problem<br>to running system.</h1>
           <p class="lede">
-            Erongo Software designs and builds the software your business runs on —
+            Erongo Software designs and builds the software your business runs on --
             custom applications, integrations, APIs and automation. One partner from the
             first architecture review to deployment and operation. Based in Namibia,
             delivering worldwide.
@@ -435,14 +441,14 @@
       </div>
     </section>
 
-    <!-- ══════════════════════ Development ══════════════════════ -->
+    <!--  Development  -->
     <section class="section section-alt" id="development">
       <div class="container">
         <div class="value-statement">
           <h2>Most companies can describe what they need.<br>Few get software that actually does it.</h2>
           <p>
-            Advice, build, integration and automation come from the same pair of hands —
-            <em>nothing gets lost between handoffs</em>, and you always know what is
+            Advice, build, integration and automation come from the same pair of hands --
+            <em>nothing gets lost between handoffs</em>, and you always know what isthe job
             happening, what it costs, and what comes next.
           </p>
         </div>
@@ -454,7 +460,7 @@
             </div>
             <p class="card-kicker">Early project stage</p>
             <h3>Technical Consultation</h3>
-            <p>Technical direction for projects with unclear requirements — architecture reviews, build-vs-buy decisions, and technical due diligence.</p>
+            <p>Technical direction for projects with unclear requirements -- architecture reviews, build-vs-buy decisions, and technical due diligence.</p>
             <ul class="feature-list">
               <li>Architecture and technology reviews</li>
               <li>Build-vs-buy analysis and vendor evaluation</li>
@@ -468,7 +474,7 @@
             </div>
             <p class="card-kicker">Design through operation</p>
             <h3>Software Delivery</h3>
-            <p>Internal software and business systems, designed and built end to end — responsibility from the data model through deployment and operation.</p>
+            <p>Internal software and business systems, designed and built end to end -- responsibility from the data model through deployment and operation.</p>
             <ul class="feature-list">
               <li>Full-stack web applications and tooling</li>
               <li>Data modeling, schema design, and migration</li>
@@ -482,7 +488,7 @@
             </div>
             <p class="card-kicker">System connections</p>
             <h3>Integrations and APIs</h3>
-            <p>Software connected to databases and third-party platforms — and the APIs designed to keep those integrations stable.</p>
+            <p>Software connected to databases and third-party platforms -- and the APIs designed to keep those integrations stable.</p>
             <ul class="feature-list">
               <li>REST and event-driven API design</li>
               <li>Third-party and legacy system integrations</li>
@@ -507,13 +513,13 @@
       </div>
     </section>
 
-    <!-- ══════════════════════ Process ══════════════════════ -->
+    <!--  Process  -->
     <section class="section" id="process">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">How the work moves</p>
+          <p class="eyebrow">Workflow</p>
           <h2>Plan, build, connect, automate</h2>
-          <p>Every engagement moves through the same four phases — visible and trackable, so you always know where your project stands.</p>
+          <p>Every engagement moves through the same four phases -- visible and trackable, so you always know where your project stands.</p>
         </div>
 
         <ol class="step-grid four">
@@ -563,29 +569,29 @@
           <span class="callout-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
           <div class="callout-body">
             <p class="callout-title">Visible progress at every step</p>
-            <p>Each phase is visible and trackable — advice, build, integration and automation from the same contractor, without details getting lost between handoffs.</p>
+            <p>Each phase is visible and trackable -- advice, build, integration and automation from the same contractor, without details getting lost between handoffs.</p>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- ══════════════════════ Products ══════════════════════ -->
+    <!--  Products  -->
     <section class="section section-alt" id="products">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Products</p>
           <h2>Products we ship</h2>
-          <p>Commercial applications and platforms developed for ongoing use — the same engineering as client work, versioned, licensed and operated.</p>
+          <p>Commercial applications and platforms developed for ongoing use -- the same engineering as client work, versioned, licensed and operated.</p>
         </div>
 
         <div class="panel product-featured reveal">
           <div>
             <p class="card-kicker">oms-platform.net</p>
-            <h3>OMS — Organisation Management System</h3>
+            <h3>OMS -- Organisation Management System</h3>
             <p>
               The organisational governance platform: interactive organograms, RACI
               accountability, gap &amp; vacancy analysis, bus-factor risk scoring and ISO 9001
-              compliance — built for HR and leadership teams. Self-hosted or fully managed,
+              compliance -- built for HR and leadership teams. Self-hosted or fully managed,
               browser-only, nothing to install.
             </p>
             <div class="chip-row">
@@ -596,7 +602,7 @@
           </div>
           <div class="product-cta">
             <a class="btn btn-primary" href="https://oms-platform.net" target="_blank" rel="noopener">Visit OMS</a>
-            <a class="btn btn-ghost" href="https://demo.oms-platform.net" target="_blank" rel="noopener">Public demo environment</a>
+            <a class="btn btn-ghost" href="https://demo.oms-platform.net" target="_blank" rel="noopener">Demo Access</a>
             <span class="product-visit">Pricing and a live demo organisation at oms-platform.net</span>
           </div>
         </div>
@@ -630,13 +636,13 @@
       </div>
     </section>
 
-    <!-- ══════════════════════ Past work ══════════════════════ -->
+    <!--  Past work  -->
     <section class="section" id="work">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Past work</p>
           <h2>A selection of client projects</h2>
-          <p>Across operations, logistics, travel, energy and food service — delivered over the years for customers who needed the work done properly.</p>
+          <p>Across operations, logistics, travel, energy and food service -- delivered over the years for customers who needed the work done properly.</p>
         </div>
 
         <div class="work-grid">
@@ -676,7 +682,7 @@
           <article class="panel work-card reveal">
             <p class="card-kicker">Food Service · Sales</p>
             <h3>Online Bulk Meal Ordering Platform</h3>
-            <p>Bulk meal orders from the public in a streamlined e-commerce flow — users select meals, specify quantities over MOQ, and schedule deliveries.</p>
+            <p>Bulk meal orders from the public in a streamlined e-commerce flow -- users select meals, specify quantities over MOQ, and schedule deliveries.</p>
             <div class="proof-tags">
               <span class="proof-tag">Postgres</span>
               <span class="proof-tag">Python</span>
@@ -698,7 +704,7 @@
           <article class="panel work-card reveal">
             <p class="card-kicker">Energy · Supply Chain</p>
             <h3>Fuelstock Forecast Engine</h3>
-            <p>Predicts demand, constructs inventory forecasts, and generates actionable insights for planners — with timely alerts and recommendations to prevent out-of-supply situations.</p>
+            <p>Predicts demand, constructs inventory forecasts, and generates actionable insights for planners -- with timely alerts and recommendations to prevent out-of-supply situations.</p>
             <div class="proof-tags">
               <span class="proof-tag">Pandas</span>
               <span class="proof-tag">Pydantic</span>
@@ -720,7 +726,7 @@
           <article class="panel work-card reveal">
             <p class="card-kicker">Energy · Supply Chain</p>
             <h3>Stock Recon Tool</h3>
-            <p>Compares system records with physical stock counts, flags discrepancies and generates adjustment reports — standardized output for management to review.</p>
+            <p>Compares system records with physical stock counts, flags discrepancies and generates adjustment reports -- standardized output for management to review.</p>
             <div class="proof-tags">
               <span class="proof-tag">Vite</span>
               <span class="proof-tag">TypeScript</span>
@@ -740,90 +746,169 @@
       </div>
     </section>
 
-    <!-- ══════════════════════ Infrastructure ══════════════════════ -->
+    <!--  Infrastructure  -->
     <section class="section section-alt" id="infrastructure">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Infrastructure</p>
           <h2>The platform behind the products</h2>
-          <p>Backend services that make the applications and platforms possible — each one built with the same development practice, on the same infrastructure.</p>
+          <p>
+            A view of the operational complexity behind erongo.net and its ecosystem: 
+            five public sites, seven services, a shared data platform and
+            three servers -- provisioned by code, watched around the clock, and
+            documented in 26+ runbooks.
+          </p>
         </div>
 
-        <div class="infra-grid">
-          <a class="panel infra-card reveal" href="https://api.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">api.erongo.net</p>
-            <h3>API Gateway</h3>
-            <p>External access to all managed resources, integrated deeply with the authentication, logging, and event-streaming backend.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://auth.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">auth.erongo.net</p>
-            <h3>Authentication</h3>
-            <p>Identity, single sign-on, permissions, and session controls across all hosted services.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://billing.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">billing.erongo.net</p>
-            <h3>Billing</h3>
-            <p>Subscriptions, recurring invoices, payment events, and account usage for service plans.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://license.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">license.erongo.net</p>
-            <h3>Licensing</h3>
-            <p>Issues, validates, and revokes product entitlements so access stays controlled and auditable.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://portal.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">portal.erongo.net</p>
-            <h3>Portal</h3>
-            <p>A unified place for customers to manage accounts, access tools, and track service usage.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://support.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">support.erongo.net</p>
-            <h3>Support</h3>
-            <p>Issue handling, service requests, and customer communication behind a single workflow.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://dash.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">dash.erongo.net</p>
-            <h3>Dashboard</h3>
-            <p>One pane of glass for resources, system status, key metrics, alerts, and usage patterns.</p>
-          </a>
-          <a class="panel infra-card reveal" href="https://git.erongo.net" target="_blank" rel="noopener">
-            <span class="icon-external" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-            <p class="card-kicker">git.erongo.net</p>
-            <h3>Version Control</h3>
-            <p>The central code-forge: version control, CI/CD, and code collaboration across all erongo.net services.</p>
-          </a>
+        <figure class="infra-diagram reveal">
+          <svg viewBox="0 0 960 570" role="img" aria-labelledby="infraDiaTitle infraDiaDesc" fill="none">
+            <title id="infraDiaTitle">The Erongo platform, top to bottom</title>
+            <desc id="infraDiaDesc">Five public sites (main site, OMS platform, and Assets, Rentals and Property coming soon) are served over HTTPS through the edge. Seven services -- an API gateway plus identity and auth, billing, licensing, support, a customer portal, and the OMS platform -- run on a shared platform of PostgreSQL data, Redis cache, NATS event streaming, S3-compatible object storage, a git code forge with CI/CD, and on-prem GPU AI inference. Everything runs on three self-hosted servers -- one primary and two workers -- with hardened containerized hosts, monitoring and alerts, verified backups and disaster-recovery drills, and 26+ documented runbooks.</desc>
+            <defs>
+              <marker id="erongoDiaArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" class="dia-arrowhead"/>
+              </marker>
+            </defs>
+
+            <!-- Band: sites -->
+            <rect x="8" y="8" width="944" height="92" rx="2" class="dia-band"/>
+            <text x="24" y="32" class="dia-band-label">PUBLIC ACCESS</text>
+            <g text-anchor="middle">
+              <rect x="16" y="44" width="176" height="44" rx="2" class="dia-node-accent"/>
+              <text x="104" y="62" class="dia-label-inverse">Main Site</text>
+              <text x="104" y="76" class="dia-sub-inverse">( you are here )</text>
+              <rect x="204" y="44" width="176" height="44" rx="2" class="dia-node"/>
+              <text x="292" y="62" class="dia-label">Platforms</text>
+              <text x="292" y="76" class="dia-sub">products</text>
+              <rect x="392" y="44" width="176" height="44" rx="2" class="dia-node dia-node-dash"/>
+              <text x="480" y="62" class="dia-label">Portal</text>
+              <text x="480" y="76" class="dia-sub">customer service</text>
+              <rect x="580" y="44" width="176" height="44" rx="2" class="dia-node dia-node-dash"/>
+              <text x="668" y="62" class="dia-label">Tracker</text>
+              <text x="668" y="76" class="dia-sub">client visibility</text>
+              <rect x="768" y="44" width="176" height="44" rx="2" class="dia-node dia-node-dash"/>
+              <text x="856" y="62" class="dia-label">Support</text>
+              <text x="856" y="76" class="dia-sub">issue tracking</text>
+            </g>
+
+            <!-- Arrow: edge -->
+            <line x1="480" y1="100" x2="480" y2="130" stroke-width="1.5" class="dia-arrow" marker-end="url(#erongoDiaArrow)"/>
+
+            <!-- Band: services -->
+            <rect x="8" y="136" width="944" height="120" rx="2" class="dia-band"/>
+            <text x="24" y="160" class="dia-band-label">SERVICE LAYER</text>
+            <g text-anchor="middle">
+              <rect x="16" y="172" width="140" height="68" rx="2" class="dia-node"/>
+              <text x="86" y="200" class="dia-label">API Gateway</text>
+              <text x="86" y="218" class="dia-sub">single entry point</text>
+              <rect x="172" y="172" width="140" height="68" rx="2" class="dia-node"/>
+              <text x="242" y="200" class="dia-label">Identity &amp; Auth</text>
+              <text x="242" y="218" class="dia-sub">accounts, SSO</text>
+              <rect x="328" y="172" width="140" height="68" rx="2" class="dia-node"/>
+              <text x="398" y="200" class="dia-label">Billing</text>
+              <text x="398" y="218" class="dia-sub">subscriptions</text>
+              <rect x="484" y="172" width="140" height="68" rx="2" class="dia-node"/>
+              <text x="554" y="200" class="dia-label">Licensing</text>
+              <text x="554" y="218" class="dia-sub">entitlements</text>
+              <rect x="640" y="172" width="140" height="68" rx="2" class="dia-node"/>
+              <text x="710" y="200" class="dia-label">Backend</text>
+              <text x="710" y="218" class="dia-sub">services</text>
+              <rect x="796" y="172" width="140" height="68" rx="2" class="dia-node"/>
+              <text x="866" y="200" class="dia-label">Backend</text>
+              <text x="866" y="218" class="dia-sub">platforms</text>
+            </g>
+
+            <!-- Arrow: platform -->
+            <line x1="480" y1="256" x2="480" y2="288" stroke-width="1.5" class="dia-arrow" marker-end="url(#erongoDiaArrow)"/>
+
+            <!-- Band: shared platform -->
+            <rect x="8" y="294" width="944" height="92" rx="2" class="dia-band"/>
+            <text x="24" y="318" class="dia-band-label">PLATFORM INFRASTRUCTURE</text>
+            <g text-anchor="middle">
+              <rect x="16" y="330" width="146" height="44" rx="2" class="dia-node"/>
+              <text x="89" y="348" class="dia-label">Data</text>
+              <text x="89" y="364" class="dia-sub">PostgreSQL</text>
+              <rect x="172" y="330" width="146" height="44" rx="2" class="dia-node"/>
+              <text x="245" y="348" class="dia-label">Cache &amp; Sessions</text>
+              <text x="245" y="364" class="dia-sub">Redis</text>
+              <rect x="328" y="330" width="146" height="44" rx="2" class="dia-node"/>
+              <text x="401" y="348" class="dia-label">Event Streaming</text>
+              <text x="401" y="364" class="dia-sub">Message Queue</text>
+              <rect x="484" y="330" width="146" height="44" rx="2" class="dia-node"/>
+              <text x="557" y="348" class="dia-label">Object storage</text>
+              <text x="557" y="364" class="dia-sub">Clustered S3</text>
+              <rect x="640" y="330" width="146" height="44" rx="2" class="dia-node"/>
+              <text x="713" y="348" class="dia-label">Code Forge</text>
+              <text x="713" y="364" class="dia-sub">git + CI/CD</text>
+              <rect x="796" y="330" width="146" height="44" rx="2" class="dia-node"/>
+              <text x="869" y="348" class="dia-label">Inference</text>
+              <text x="869" y="364" class="dia-sub">on-prem</text>
+            </g>
+
+            <!-- Arrow: servers -->
+            <line x1="480" y1="386" x2="480" y2="418" stroke-width="1.5" class="dia-arrow" marker-end="url(#erongoDiaArrow)"/>
+
+            <!-- Band: servers -->
+            <rect x="8" y="424" width="944" height="84" rx="2" class="dia-band"/>
+            <text x="24" y="448" class="dia-band-label">PHYSICAL INFRASTRUCTURE</text>
+            <g text-anchor="middle">
+              <rect x="16" y="460" width="292" height="40" rx="2" class="dia-node"/>
+              <text x="162" y="478" class="dia-label">Primary</text>
+              <text x="162" y="492" class="dia-sub">data, core services &amp; monitoring</text>
+              <rect x="326" y="460" width="292" height="40" rx="2" class="dia-node"/>
+              <text x="472" y="478" class="dia-label">Worker</text>
+              <text x="472" y="492" class="dia-sub">application services &amp; storage</text>
+              <rect x="636" y="460" width="292" height="40" rx="2" class="dia-node"/>
+              <text x="782" y="478" class="dia-label">Worker</text>
+              <text x="782" y="492" class="dia-sub">application services &amp; storage</text>
+            </g>
+
+            <!-- Operations strip -->
+            <g text-anchor="middle">
+              <rect x="16" y="528" width="266" height="34" rx="2" class="dia-chip"/>
+              <text x="149" y="549" class="dia-chip-label">Hardened Ubuntu, Rootless Containers</text>
+              <rect x="292" y="528" width="192" height="34" rx="2" class="dia-chip"/>
+              <text x="388" y="549" class="dia-chip-label">Monitoring, Logs &amp; Alerts</text>
+              <rect x="494" y="528" width="162" height="34" rx="2" class="dia-chip"/>
+              <text x="576" y="549" class="dia-chip-label">Backups &amp; DR Drills</text>
+              <rect x="666" y="528" width="278" height="34" rx="2" class="dia-chip"/>
+              <text x="805" y="549" class="dia-chip-label">26+ Runbooks</text>
+            </g>
+          </svg>
+          <figcaption>Five sites · seven services · one shared platform · three servers -- all self-hosted, all documented.</figcaption>
+        </figure>
+
+        <div class="infra-points">
+          <div class="panel infra-point reveal">
+            <h3>Self-hosted, end to end</h3>
+            <p>Every component -- data, storage, events, the code forge, even AI inference -- runs on our own servers. No third-party platform holds the products together.</p>
+          </div>
+          <div class="panel infra-point reveal">
+            <h3>Documented, not tribal</h3>
+            <p>26+ runbooks cover everything from provisioning a fresh server to backup verification and disaster-recovery drills. If a step is not written down, it does not happen.</p>
+          </div>
+          <div class="panel infra-point reveal">
+            <h3>Watched, not forgotten</h3>
+            <p>Metrics, logs and alerts on every node, with dashboards for status, usage and incidents. Issues are fixed before customers notice.</p>
+          </div>
         </div>
+
+        <aside class="callout">
+          <span class="callout-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+          <div class="callout-body">
+            <p class="callout-title">This page runs on the same practice we sell</p>
+            <p>The infrastructure above is built the way we build for clients -- configuration in Git, reproducible provisioning, a runbook for every operation. It is a working example, not a slide.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ══════════════════════ Final CTA ══════════════════════ -->
+    <!--  Final CTA  -->
     <section class="cta-band">
       <div class="container cta-band-inner">
         <h2>Have a problem worth solving?</h2>
         <p>
-          Send your requirements — or scope it yourself with the project wizard.
+          Send your requirements -- or scope it yourself with the project wizard.
           I respond within one business day with the scope, timeline, and cost.
         </p>
         <div class="cta-row">
@@ -836,11 +921,11 @@
     </section>
   </main>
 
-  <!-- ══════════════════════ Footer ══════════════════════ -->
+  <!--  Footer  -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="Erongo Software — back to top">
+        <a class="brand" href="#top" aria-label="Erongo Software -- back to top">
           <span class="brand-mark">erongo<span class="dot">.</span></span>
         </a>
         <p>Software development and commercial products. Based in Namibia, delivering worldwide.</p>
@@ -850,7 +935,7 @@
         <h3>Site</h3>
         <ul>
           <li><a href="#development">Development</a></li>
-          <li><a href="#process">How the work moves</a></li>
+          <li><a href="#process">Workflow</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#work">Past work</a></li>
           <li><a href="#infrastructure">Infrastructure</a></li>
@@ -858,12 +943,22 @@
         </ul>
       </nav>
 
+      <nav class="footer-col" aria-label="Resources">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://portal.erongo.net" target="_blank" rel="noopener">Portal</a></li>
+          <li><a href="https://tracker.erongo.net" target="_blank" rel="noopener">Tracker</a></li>
+          <li><a href="https://support.erongo.net" target="_blank" rel="noopener">Support</a></li>
+          <li><a href="https://oms-platform.net" target="_blank" rel="noopener">OMS Platform</a></li>
+        </ul>
+      </nav>
+
       <nav class="footer-col" aria-label="Contact">
         <h3>Contact</h3>
         <ul>
           <li><a href="mailto:contact@erongo.net">contact@erongo.net</a></li>
+          <li><a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" target="_blank" rel="noopener">Book a Call</a></li>
           <li><a href="https://github.com/erongo" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" target="_blank" rel="noopener">Book a call</a></li>
         </ul>
       </nav>
     </div>

@@ -1,4 +1,4 @@
-/* Theme toggle — respects prefers-color-scheme, persists to localStorage */
+/* Theme toggle -- respects prefers-color-scheme, persists to localStorage */
 (function () {
   var STORAGE_KEY = 'erongo-theme';
 

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-labelledby="title desc">
-  <title id="title">Erongo Software — Development &amp; products</title>
+  <title id="title">Erongo Software -- Development &amp; products</title>
   <desc id="desc">Social preview card for Erongo Software: software development (consultation, delivery, integrations, automation) and commercial products such as OMS. Namibia-based, delivering worldwide.</desc>
 
   <!-- Background -->
@@ -18,7 +18,7 @@
 
   <!-- Brand -->
   <text x="80" y="80" fill="#e5e7eb" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="36" font-weight="700">erongo<tspan fill="#3b82f6">.</tspan></text>
-  <text x="80" y="116" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="17" font-weight="500">Software development &amp; products — based in Namibia, delivering worldwide</text>
+  <text x="80" y="116" fill="#9ca3af" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="17" font-weight="500">Software development &amp; products -- based in Namibia, delivering worldwide</text>
 
   <!-- Divider -->
   <rect x="80" y="140" width="48" height="2" fill="#3b82f6"/>

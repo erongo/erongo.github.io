@@ -276,7 +276,7 @@
                 <label class="wizard-option" data-value="recommend">
                   <input type="radio" name="platform" value="recommend">
                   <span class="wizard-option-content">
-                    <span class="wizard-option-title">Not sure — recommend for me</span>
+                    <span class="wizard-option-title">Not sure -- recommend for me</span>
                     <span class="wizard-option-desc">We'll suggest the best fit based on your answers.</span>
                   </span>
                 </label>
@@ -489,12 +489,21 @@
         </ul>
       </nav>
 
+      <nav class="footer-col" aria-label="Resources">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://oms-platform.net" target="_blank" rel="noopener">OMS Platform</a></li>
+          <li><a href="https://portal.erongo.net" target="_blank" rel="noopener">Portal</a></li>
+          <li><a href="https://support.erongo.net" target="_blank" rel="noopener">Support</a></li>
+        </ul>
+      </nav>
+
       <nav class="footer-col" aria-label="Contact">
         <h3>Contact</h3>
         <ul>
           <li><a href="mailto:contact@erongo.net">contact@erongo.net</a></li>
-          <li><a href="https://github.com/erongo" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://github.com/erongo" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
@@ -533,7 +542,7 @@
         },
         '2a': () => '3',
         '2b': () => '3',
-        '2z': () => '6', // Skip platform, features, requirements for unsure path — go straight to timeline
+        '2z': () => '6', // Skip platform, features, requirements for unsure path -- go straight to timeline
         3: () => '4',
         4: () => '5',
         5: () => '6',
@@ -737,15 +746,15 @@
 
         switch (type) {
           case 'customer-facing':
-            return 'Web browser — best reach, works on any device without installation';
+            return 'Web browser -- best reach, works on any device without installation';
           case 'internal-tool':
-            return 'Web browser — easy to deploy, update, and access from any computer';
+            return 'Web browser -- easy to deploy, update, and access from any computer';
           case 'integration':
-            return 'API-only — no user interface needed, just reliable system-to-system connections';
+            return 'API-only -- no user interface needed, just reliable system-to-system connections';
           case 'automation':
-            return 'API-only or web dashboard — automated backend with an optional monitoring interface';
+            return 'API-only or web dashboard -- automated backend with an optional monitoring interface';
           case 'unsure':
-            return 'To be discussed — we\'ll recommend the best fit after understanding your problem';
+            return 'To be discussed -- we\'ll recommend the best fit after understanding your problem';
           default:
             return 'Web browser (recommended)';
         }
@@ -936,7 +945,7 @@
         }
 
         lines.push('');
-        lines.push(`Complexity: ${complexity.tier} — ${complexity.desc}`);
+        lines.push(`Complexity: ${complexity.tier} -- ${complexity.desc}`);
 
         if (state.answers.timeline) {
           lines.push(`Timeline: ${formatTimeline(state.answers.timeline)}`);
@@ -1004,7 +1013,7 @@
 
       function formatTimeline(val) {
         const map = {
-          'asap': 'ASAP — urgent',
+          'asap': 'ASAP -- urgent',
           '1-3-months': 'Within 1-3 months',
           '3-6-months': 'Within 3-6 months',
           'flexible': 'Flexible'
@@ -1086,7 +1095,7 @@
         }
       });
 
-      // Radio button selection — highlight selected option
+      // Radio button selection -- highlight selected option
       form.addEventListener('change', (e) => {
         if (e.target.type === 'radio') {
           const fieldset = e.target.closest('.wizard-options');

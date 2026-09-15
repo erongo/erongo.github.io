@@ -1,4 +1,4 @@
-/* erongo.net — nav, scroll-spy, reveal on scroll, footer year. */
+/* erongo.net -- nav, scroll-spy, reveal on scroll, footer year. */
 (function () {
   'use strict';
 

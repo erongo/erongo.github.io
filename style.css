@@ -548,11 +548,22 @@ ol {
 .value-statement p {
   color: var(--text-secondary);
   font-size: 1.05rem;
+  margin-bottom: 1.5rem;
 }
 
 .value-statement em {
   color: var(--text-primary);
   font-style: italic;
+}
+
+.value-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.value-actions .btn {
+  font-size: 0.95rem;
 }
 
 /* Feature cards */
@@ -692,6 +703,87 @@ ol {
 
 .step-card p {
   font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Screenshot placeholders */
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.shot {
+  padding: 1rem;
+}
+
+.shot-frame {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.work-card .shot-frame {
+  margin-bottom: 0.9rem;
+}
+
+.shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--accent-subtle);
+}
+
+.shot-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.shot-url {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+}
+
+.shot-body {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 10px, var(--accent-subtle) 10px 20px);
+}
+
+.shot-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-tertiary);
+  background: var(--bg-surface);
+  border: 1px dashed var(--border);
+  border-radius: 2px;
+  padding: 0.35rem 0.75rem;
+}
+
+.shot figcaption {
+  padding-top: 0.85rem;
+}
+
+.shot figcaption h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.shot figcaption p {
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
@@ -1785,6 +1877,7 @@ ol {
   .feature-grid,
   .step-grid,
   .step-grid.four,
+  .shot-grid,
   .work-grid {
     grid-template-columns: 1fr;
   }

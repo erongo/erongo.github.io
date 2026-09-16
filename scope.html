@@ -32,7 +32,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="erongo">
-  <meta name="theme-color" content="#1a1d21">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -75,7 +75,7 @@
 
   <script>
     (function () {
-      var t = localStorage.getItem('erongo-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var t = localStorage.getItem('erongo-theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -108,6 +108,24 @@
 
     <main id="main">
       <section class="wizard-section">
+        <div class="section-bg" aria-hidden="true">
+          <svg class="bg-shape bg-shape--orange bg-shape--far" data-speed="0.12" width="168" height="120" viewBox="0 0 168 120" style="top:-14px; right:-26px">
+            <defs><pattern id="bgd-scope" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+            <rect width="168" height="120" fill="url(#bgd-scope)"/>
+          </svg>
+          <svg class="bg-shape bg-shape--green bg-shape--near" data-speed="0.05" width="64" height="64" viewBox="0 0 64 64" style="top:10%; left:8%">
+            <polygon points="32 6 58 32 32 58 6 32" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <svg class="bg-shape bg-shape--red bg-shape--far" data-speed="0.13" width="52" height="72" viewBox="0 0 52 72" style="top:32%; right:6%">
+            <polygon points="26 4 48 36 26 68 4 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7"/>
+          </svg>
+          <svg class="bg-shape bg-shape--orange bg-shape--far bg-shape--soft-subtle" data-speed="0.11" width="150" height="46" viewBox="0 0 150 46" style="top:56%; left:14%">
+            <path d="M6 23 Q18 4 30 23 T54 23 T78 23 T102 23 T126 23 T144 23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <svg class="bg-shape bg-shape--green bg-shape--far" data-speed="0.1" width="120" height="120" viewBox="0 0 120 120" style="bottom:8%; right:20%">
+            <polygon points="60 14 106 60 60 106 14 60" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
         <div class="container">
 
         <section class="panel wizard-panel" aria-labelledby="wizard-heading">

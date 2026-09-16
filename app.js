@@ -68,6 +68,53 @@
     els.forEach(function (el) { observer.observe(el); });
   }
 
+  /* ── Subtle parallax on decorative background shapes ──
+     Shapes drift a fraction slower than the scroll, so they read
+     as a calm background layer. No-op when there are no shapes or
+     the user prefers reduced motion. */
+  function wireParallax() {
+    var shapes = Array.prototype.slice.call(document.querySelectorAll('.bg-shape[data-speed]'));
+    if (!shapes.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var items = shapes.map(function (el) {
+      return { el: el, speed: parseFloat(el.getAttribute('data-speed')) || 0, top: 0, h: 0 };
+    });
+
+    // Cache each shape's document-space top edge (measured with the
+    // transform reset so the reading is stable).
+    function measure() {
+      items.forEach(function (it) { it.el.style.transform = 'none'; });
+      var y = window.pageYOffset;
+      items.forEach(function (it) {
+        var rect = it.el.getBoundingClientRect();
+        it.top = rect.top + y;
+        it.h = rect.height;
+      });
+    }
+
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var y = window.pageYOffset;
+      var center = window.innerHeight / 2;
+      items.forEach(function (it) {
+        var shapeCenter = it.top - y + it.h / 2;   // shape centre in viewport space
+        var offset = center - shapeCenter;          // + above centre, - below
+        it.el.style.transform = 'translate3d(0,' + (offset * it.speed).toFixed(1) + 'px,0)';
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }
+
+    measure();
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () { measure(); onScroll(); }, { passive: true });
+  }
+
   /* ── Footer year ── */
   function wireYear() {
     var el = document.getElementById('year');
@@ -77,5 +124,6 @@
   wireNav();
   wireScrollSpy();
   wireReveal();
+  wireParallax();
   wireYear();
 })();

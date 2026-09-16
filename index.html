@@ -36,7 +36,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="erongo">
-  <meta name="theme-color" content="#1a1d21">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -316,7 +316,7 @@
 
   <script>
     (function () {
-      var t = localStorage.getItem('erongo-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var t = localStorage.getItem('erongo-theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -359,6 +359,21 @@
 
     <!--  Hero  -->
     <section class="hero">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-shape bg-shape--far" data-speed="0.13" width="168" height="120" viewBox="0 0 168 120" style="top:-14px; right:-26px">
+          <defs><pattern id="bgd-hero" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-hero)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.11" width="240" height="240" viewBox="0 0 240 240" style="bottom:-110px; left:-80px">
+          <circle cx="120" cy="120" r="112" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--near" data-speed="0.05" width="64" height="64" viewBox="0 0 64 64" style="top:18%; left:6%">
+          <polygon points="32 6 58 32 32 58 6 32" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--far" data-speed="0.12" width="180" height="70" viewBox="0 0 180 70" style="top:52%; right:14%">
+          <path d="M8 35 Q23 8 38 35 T68 35 T98 35 T128 35 T158 35 T172 35" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Development &amp; products</p>
@@ -443,12 +458,43 @@
 
     <!--  Development  -->
     <section class="section section-alt" id="development">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-shape bg-shape--far" data-speed="0.12" width="220" height="220" viewBox="0 0 220 220" style="top:-90px; right:-70px">
+          <circle cx="110" cy="110" r="102" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.14" width="168" height="120" viewBox="0 0 168 120" style="bottom:-14px; left:-26px">
+          <defs><pattern id="bgd-dev" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-dev)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--near" data-speed="0.04" width="56" height="56" viewBox="0 0 56 56" style="bottom:18%; right:5%">
+          <path d="M28 12v32M12 28h32" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far bg-shape--soft" data-speed="0.12" width="300" height="300" viewBox="0 0 300 300" style="top:20%; right:-56px">
+          <g class="bg-drift">
+            <path d="M124.1 67.6 Q130.6 49.7 142.8 64.3 L243.0 183.8 Q255.2 198.3 236.5 201.6 L82.9 228.7 Q64.2 232.0 70.7 214.1 L124.1 67.6 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="7 10"/>
+          </g>
+        </svg>
+        <svg class="bg-shape bg-shape--far bg-shape--soft-subtle" data-speed="0.09" width="140" height="140" viewBox="0 0 140 140" style="top:34%; left:-34px">
+          <g class="bg-drift bg-drift--slow">
+            <path d="M74.7 31.4 Q80.4 25.1 83.0 33.2 L104.5 99.4 Q107.2 107.5 98.8 105.7 L30.8 91.2 Q22.4 89.5 28.1 83.1 L74.7 31.4 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 9"/>
+          </g>
+        </svg>
+        <svg class="bg-shape bg-shape--red bg-shape--near" data-speed="0.04" width="44" height="44" viewBox="0 0 44 44" style="top:12%; left:22%">
+          <polygon points="22 4 40 22 22 40 4 22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--far" data-speed="0.11" width="360" height="130" viewBox="0 0 360 130" style="bottom:24%; right:-40px">
+          <path d="M20 26 L90 65 L20 104 M20 26 L20 104 M160 26 L230 65 L160 104 M160 26 L160 104" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--far bg-shape--soft-subtle" data-speed="0.1" width="120" height="44" viewBox="0 0 120 44" style="bottom:8%; right:18%">
+          <path d="M6 22 Q18 4 30 22 T54 22 T78 22 T102 22 T114 22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="container">
         <div class="value-statement">
           <h2>Most companies can describe what they need.<br>Few get software that actually does it.</h2>
           <p>
             Advice, build, integration and automation come from the same pair of hands --
-            <em>nothing gets lost between handoffs</em>, and you always know what isthe job
+            <em>nothing gets lost between handoffs</em>, and you always know what is
             happening, what it costs, and what comes next.
           </p>
         </div>
@@ -515,6 +561,29 @@
 
     <!--  Process  -->
     <section class="section" id="process">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-shape bg-shape--far" data-speed="0.12" width="260" height="170" viewBox="0 0 260 170" style="top:26%; right:-80px">
+          <rect x="1" y="1" width="258" height="168" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.14" width="168" height="120" viewBox="0 0 168 120" style="top:-14px; left:-26px">
+          <defs><pattern id="bgd-proc" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-proc)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--accent" data-speed="0.04" width="1024" height="1024" viewBox="0 0 14 14" style="top:48%; left:4%">
+          <circle cx="7" cy="7" r="5" fill="currentColor"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--near" data-speed="0.05" width="56" height="80" viewBox="0 0 56 80" style="top:14%; left:30%">
+          <polygon points="28 4 52 40 28 76 4 40" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--far bg-shape--soft" data-speed="0.11" width="260" height="100" viewBox="0 0 260 100" style="top:62%; right:-30px">
+          <g class="bg-drift">
+            <path d="M10 50 Q32 14 54 50 T98 50 T142 50 T186 50 T230 50 T250 50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          </g>
+        </svg>
+        <svg class="bg-shape bg-shape--red bg-shape--far" data-speed="0.13" width="90" height="120" viewBox="0 0 90 120" style="bottom:12%; left:8%">
+          <polygon points="45 8 82 60 45 112 8 60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7"/>
+        </svg>
+      </div>
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Workflow</p>
@@ -577,6 +646,27 @@
 
     <!--  Products  -->
     <section class="section section-alt" id="products">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-shape bg-shape--far" data-speed="0.11" width="220" height="220" viewBox="0 0 220 220" style="top:30%; left:-90px">
+          <circle cx="110" cy="110" r="102" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.14" width="168" height="120" viewBox="0 0 168 120" style="bottom:-14px; right:-26px">
+          <defs><pattern id="bgd-prod" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-prod)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--near" data-speed="0.04" width="56" height="56" viewBox="0 0 56 56" style="top:16%; left:5%">
+          <path d="M28 12v32M12 28h32" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--near" data-speed="0.05" width="72" height="72" viewBox="0 0 72 72" style="top:30%; right:8%">
+          <polygon points="36 8 64 36 36 64 8 36" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--red bg-shape--far bg-shape--soft-subtle" data-speed="0.12" width="130" height="46" viewBox="0 0 130 46" style="top:58%; left:12%">
+          <path d="M6 23 Q18 4 30 23 T54 23 T78 23 T102 23 T124 23" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--far" data-speed="0.1" width="64" height="90" viewBox="0 0 64 90" style="bottom:10%; right:26%">
+          <polygon points="32 6 58 45 32 84 6 45" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7"/>
+        </svg>
+      </div>
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Products</p>
@@ -638,6 +728,29 @@
 
     <!--  Past work  -->
     <section class="section" id="work">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-shape bg-shape--far" data-speed="0.13" width="168" height="120" viewBox="0 0 168 120" style="top:-14px; right:-26px">
+          <defs><pattern id="bgd-work" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-work)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.11" width="220" height="220" viewBox="0 0 220 220" style="bottom:-100px; right:-80px">
+          <circle cx="110" cy="110" r="102" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--near" data-speed="0.04" width="56" height="56" viewBox="0 0 56 56" style="top:20%; left:4%">
+          <path d="M28 12v32M12 28h32" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--red bg-shape--near" data-speed="0.05" width="48" height="48" viewBox="0 0 48 48" style="top:10%; right:10%">
+          <polygon points="24 6 42 24 24 42 6 24" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--far" data-speed="0.12" width="200" height="70" viewBox="0 0 200 70" style="top:44%; right:-20px">
+          <path d="M8 35 Q23 8 38 35 T68 35 T98 35 T128 35 T158 35 T172 35 T192 35" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--far bg-shape--soft" data-speed="0.1" width="280" height="140" viewBox="0 0 280 140" style="bottom:6%; left:20%">
+          <g class="bg-drift bg-drift--slow">
+            <polygon points="140 20 250 70 140 120 30 70" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="7 10"/>
+          </g>
+        </svg>
+      </div>
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Past work</p>
@@ -748,6 +861,35 @@
 
     <!--  Infrastructure  -->
     <section class="section section-alt" id="infrastructure">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-texture" width="100%" height="100%" aria-hidden="true" focusable="false">
+          <defs>
+            <pattern id="tex-infra" width="24" height="24" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.2" fill="currentColor"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#tex-infra)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.14" width="168" height="120" viewBox="0 0 168 120" style="top:-14px; left:-26px">
+          <defs><pattern id="bgd-infra" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-infra)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.12" width="220" height="220" viewBox="0 0 220 220" style="bottom:-100px; right:-80px">
+          <circle cx="110" cy="110" r="102" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--accent" data-speed="0.04" width="512" height="512" viewBox="0 0 14 14" style="top:22%; right:6%">
+          <circle cx="7" cy="7" r="5" fill="currentColor"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--far" data-speed="0.13" width="56" height="56" viewBox="0 0 56 56" style="top:-10px; right:30%">
+          <polygon points="28 8 48 28 28 48 8 28" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--near" data-speed="0.05" width="40" height="56" viewBox="0 0 40 56" style="top:6%; left:44%">
+          <polygon points="20 4 36 28 20 52 4 28" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--red bg-shape--far bg-shape--soft-subtle" data-speed="0.11" width="150" height="40" viewBox="0 0 150 40" style="bottom:4%; left:30%">
+          <path d="M6 20 Q18 4 30 20 T54 20 T78 20 T102 20 T126 20 T144 20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Infrastructure</p>
@@ -905,6 +1047,24 @@
 
     <!--  Final CTA  -->
     <section class="cta-band">
+      <div class="section-bg" aria-hidden="true">
+        <svg class="bg-shape bg-shape--far" data-speed="0.13" width="168" height="120" viewBox="0 0 168 120" style="top:20%; left:-30px">
+          <defs><pattern id="bgd-cta" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="currentColor"/></pattern></defs>
+          <rect width="168" height="120" fill="url(#bgd-cta)"/>
+        </svg>
+        <svg class="bg-shape bg-shape--far" data-speed="0.11" width="220" height="220" viewBox="0 0 220 220" style="bottom:-90px; right:-70px">
+          <circle cx="110" cy="110" r="102" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--red bg-shape--far" data-speed="0.12" width="70" height="70" viewBox="0 0 70 70" style="top:-18px; right:24%">
+          <polygon points="35 8 62 35 35 62 8 35" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7"/>
+        </svg>
+        <svg class="bg-shape bg-shape--green bg-shape--near" data-speed="0.05" width="52" height="72" viewBox="0 0 52 72" style="bottom:14%; right:12%">
+          <polygon points="26 4 48 36 26 68 4 36" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <svg class="bg-shape bg-shape--orange bg-shape--far bg-shape--soft-subtle" data-speed="0.13" width="130" height="44" viewBox="0 0 130 44" style="top:18%; right:40%">
+          <path d="M6 22 Q18 4 30 22 T54 22 T78 22 T102 22 T124 22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="container cta-band-inner">
         <h2>Have a problem worth solving?</h2>
         <p>

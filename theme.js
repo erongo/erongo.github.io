@@ -1,22 +1,19 @@
-/* Theme toggle -- respects prefers-color-scheme, persists to localStorage */
+/* Theme toggle -- defaults to light; an explicit user choice persists to localStorage */
 (function () {
   var STORAGE_KEY = 'erongo-theme';
 
-  function getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#1a1d21' : '#ffffff');
     var toggle = document.querySelector('.theme-toggle');
     if (toggle) {
       toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme');
     }
   }
 
-  // Initialise: localStorage override > system preference
-  var saved = localStorage.getItem(STORAGE_KEY);
-  var initial = saved || getSystemTheme();
+  // Initialise: persisted user choice wins, otherwise default to light
+  var initial = localStorage.getItem(STORAGE_KEY) || 'light';
   applyTheme(initial);
 
   // Toggle button

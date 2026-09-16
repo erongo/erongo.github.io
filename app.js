@@ -121,9 +121,46 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
+  /* ── Project pager: page through the work grid, start on a random page ── */
+  function wireWorkPager() {
+    var grid = document.querySelector('.work-grid');
+    var prev = document.getElementById('workPrev');
+    var next = document.getElementById('workNext');
+    var count = document.getElementById('workCount');
+    if (!grid || !prev || !next || !count) return;
+
+    var PER_PAGE = 2;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.work-card'));
+    var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
+    var page = 1 + Math.floor(Math.random() * pages); // open on a random page
+
+    function show() {
+      cards.forEach(function (card, i) {
+        var on = i >= (page - 1) * PER_PAGE && i < page * PER_PAGE;
+        card.classList.toggle('work-card--hidden', !on);
+      });
+      count.textContent = page + ' / ' + pages;
+      prev.disabled = pages <= 1;
+      next.disabled = pages <= 1;
+    }
+
+    prev.addEventListener('click', function () {
+      page = page > 1 ? page - 1 : pages;
+      show();
+    });
+
+    next.addEventListener('click', function () {
+      page = page < pages ? page + 1 : 1;
+      show();
+    });
+
+    show();
+  }
+
   wireNav();
   wireScrollSpy();
   wireReveal();
   wireParallax();
   wireYear();
+  wireWorkPager();
 })();

@@ -115,6 +115,90 @@
     window.addEventListener('resize', function () { measure(); onScroll(); }, { passive: true });
   }
 
+  /* ── Quote rotator: cycle through common SME requests ── */
+  function wireQuoteRotator() {
+    var figure = document.getElementById('quoteRotator');
+    var textEl = document.getElementById('quoteText');
+    if (!figure || !textEl) return;
+
+    var quotes = [
+      'We need a system that keeps an accurate picture of stock across our stores and warehouse, and tells us when to reorder before we run out.',
+      'I need an app that lets our salespeople take orders in the field, even when there is no signal.',
+      'We want to know who our best customers are and reach them automatically when they are due for a reorder.',
+      'We need a system that records every delivery and invoice, so we always know who owes us what.',
+      'I need a portal where our customers can log in and see their orders, invoices and delivery status themselves.',
+      'We want reports we can actually trust -- sales, margins and stock value without a day of spreadsheet work.',
+      'We need a system that checks quotes against live stock and pricing before anyone sends them out.',
+      'I need an app that turns our paper job cards into a trackable workflow, so nothing slips through.',
+      'We want all our data in one place -- sales, stock and customers -- instead of five different spreadsheets.',
+      'We need a system that syncs our online store with the warehouse, so we never sell what we do not have.',
+      'I need a way to capture leads from our website and WhatsApp, and follow up on every single one.',
+      'We want to know our true costs per job, so our quotes stop being guesses.',
+      'We need a system that handles returns and warranties without the paperwork piling up.',
+      'I need an app for our delivery team that shows the day\'s route and confirms deliveries as they happen.',
+      'We want a simple tool our staff can actually use -- not something that needs a training week.'
+    ];
+
+    var dots = Array.prototype.slice.call(figure.querySelectorAll('.quote-dot'));
+    // Rebuild dots to match the quote count
+    dots.forEach(function (d) { d.remove(); });
+    dots = [];
+    quotes.forEach(function (_, i) {
+      var dot = document.createElement('span');
+      dot.className = 'quote-dot' + (i === 0 ? ' is-active' : '');
+      figure.querySelector('.quote-dots').appendChild(dot);
+      dots.push(dot);
+    });
+
+    var idx = 0;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var timer = null;
+    var visible = false;
+
+    function show(n) {
+      idx = (n + quotes.length) % quotes.length;
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+      if (reduced) {
+        textEl.textContent = quotes[idx];
+        return;
+      }
+      textEl.classList.add('is-fading');
+      setTimeout(function () {
+        textEl.textContent = quotes[idx];
+        textEl.classList.remove('is-fading');
+      }, 300);
+    }
+
+    // Pause the cycle while the quote is on screen
+    function start() {
+      if (timer) return;
+      timer = setInterval(function () { show(idx + 1); }, 4500);
+    }
+
+    function stop() {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        visible ? start() : stop();
+      }, { threshold: 0.3 }).observe(figure);
+    } else {
+      start();
+    }
+
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () {
+        if (i !== idx) show(i);
+        stop();
+        start(); // reset the interval so the pause feels deliberate
+      });
+    });
+  }
+
   /* ── Footer year ── */
   function wireYear() {
     var el = document.getElementById('year');
@@ -161,6 +245,7 @@
   wireScrollSpy();
   wireReveal();
   wireParallax();
+  wireQuoteRotator();
   wireYear();
   wireWorkPager();
 })();

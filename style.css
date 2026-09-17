@@ -835,6 +835,8 @@ ol {
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .product-cta .product-visit {
@@ -1794,6 +1796,186 @@ ol {
 }
 
 /* ──────────────────────────────────────────────
+   Quote rotator (development section)
+   ────────────────────────────────────────────── */
+.quote-rotator {
+  margin: 2.5rem auto 0;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.quote-rotator blockquote {
+  margin: 0;
+}
+
+.quote-mark {
+  display: block;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.quote-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  min-height: 3.2em;
+  transition: opacity 300ms ease;
+}
+
+.quote-text.is-fading {
+  opacity: 0;
+}
+
+.quote-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.quote-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  cursor: pointer;
+  transition: background 300ms ease, transform 300ms ease;
+}
+
+.quote-dot:hover {
+  background: var(--text-tertiary);
+}
+
+.quote-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+/* ──────────────────────────────────────────────
+   Gantt (process callout)
+   ────────────────────────────────────────────── */
+.gantt {
+  margin-top: 1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.75rem 1rem 0.5rem;
+}
+
+.gantt-scale {
+  display: flex;
+  gap: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gantt-scale::before {
+  content: '';
+  flex: 0 0 9rem;
+}
+
+.gantt-scale span {
+  flex: 1;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.gantt-body {
+  position: relative;
+  margin-top: 0.4rem;
+}
+
+.gantt-today {
+  position: absolute;
+  top: -2px;
+  bottom: 0;
+  width: 1px;
+  /* 5 of 8 weeks, offset past the label column */
+  left: calc(9.75rem + (100% - 9.75rem) * 0.625);
+  background: var(--danger);
+  opacity: 0.7;
+}
+
+.gantt-row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.gantt-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gantt-track {
+  position: relative;
+  height: 10px;
+  background: var(--hover-bg);
+  border-radius: 2px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent calc(100% / 8 - 1px),
+    var(--border) calc(100% / 8 - 1px),
+    var(--border) calc(100% / 8)
+  );
+}
+
+.gantt-bar {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: var(--g-start);
+  width: var(--g-width);
+  background: var(--border-strong);
+  border-radius: 2px;
+}
+
+.gantt-bar.is-done {
+  background: var(--success);
+  opacity: 0.85;
+}
+
+.gantt-bar.is-active {
+  background: var(--accent);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 6px,
+    rgba(255, 255, 255, 0.25) 6px 12px
+  );
+  box-shadow: 0 0 0 2px var(--accent-subtle);
+}
+
+.gantt-caption {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+/* ──────────────────────────────────────────────
+   External-link icon inside buttons
+   ────────────────────────────────────────────── */
+.btn .icon-ext {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.btn-primary .icon-ext {
+  color: var(--text-inverse);
+  opacity: 0.8;
+}
+
+/* ──────────────────────────────────────────────
    Responsive
    ────────────────────────────────────────────── */
 @media (max-width: 960px) {
@@ -1825,6 +2007,27 @@ ol {
 }
 
 @media (max-width: 860px) {
+  .gantt-row {
+    grid-template-columns: 7rem 1fr;
+    gap: 0.5rem;
+  }
+
+  .gantt-scale {
+    gap: 0.5rem;
+  }
+
+  .gantt-scale::before {
+    flex-basis: 7rem;
+  }
+
+  .gantt-label {
+    font-size: 0.75rem;
+  }
+
+  .gantt-today {
+    left: calc(7.5rem + (100% - 7.5rem) * 0.625);
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -1868,7 +2071,32 @@ ol {
 
   .wizard-summary-actions {
     flex-direction: column;
+  }gantt {
+    padding: 0.6rem 0.6rem 0.4rem;
   }
+
+  .gantt-row {
+    grid-template-columns: 6rem 1fr;
+    gap: 0.4rem;
+  }
+
+  .gantt-scale {
+    gap: 0.4rem;
+  }
+
+  .gantt-scale::before {
+    flex-basis: 6rem;
+  }
+
+  .gantt-today {
+    left: calc(6.4rem + (100% - 6.4rem) * 0.625);
+  }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .
 
   .wizard-summary-actions .btn {
     width: 100%;

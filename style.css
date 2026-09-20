@@ -566,6 +566,45 @@ ol {
   font-size: 0.95rem;
 }
 
+/* Customer sign-in split (bottom of workflow / products sections) */
+.customer-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.customer-split-text h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.customer-split-text p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.customer-split-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.customer-split-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.customer-split-sub {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
 /* Feature cards */
 .feature-grid {
   display: grid;
@@ -831,12 +870,20 @@ ol {
 }
 
 .product-cta {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
   justify-content: center;
   text-align: center;
+  min-height: 240px;
+  padding: 1.5rem;
+  border-radius: 2px;
+  background-color: var(--bg-primary);
+  background-image: linear-gradient(rgba(31, 41, 55, 0.62), rgba(31, 41, 55, 0.62)), url("img/stock-burdened-with-paperwork.jpeg");
+  background-size: 100% 100%, 175%;
+  background-position: center;
 }
 
 .product-cta .product-visit {
@@ -1093,6 +1140,27 @@ ol {
   color: var(--text-secondary);
 }
 
+.infra-metric .metric-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.infra-metric .metric-delta {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--success);
+  font-variant-numeric: tabular-nums;
+}
+
+.infra-metric .metric-delta--good {
+  color: var(--success);
+}
+
 .icon-external {
   position: absolute;
   top: 1.25rem;
@@ -1146,7 +1214,7 @@ ol {
   margin-bottom: 0.2rem;
 }
 
-.callout p:not(.callout-title) {
+.callout-body > p:not(.callout-title) {
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
@@ -1877,10 +1945,15 @@ ol {
 }
 
 .quote-text {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-style: italic;
   color: var(--text-secondary);
-  min-height: 3.2em;
+  max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
+  /* Reserve the tallest quote (3 lines at this width) so shorter quotes
+     rotate through without shifting the layout. 1 line = 1.55em. */
+  min-height: calc(3 * 1.55em);
   transition: opacity 300ms ease;
 }
 
@@ -1938,6 +2011,7 @@ ol {
 
 .gantt-scale span {
   flex: 1;
+  min-width: 0;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -2055,9 +2129,12 @@ ol {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .redacted-grid,
-  .infra-points {
+  .redacted-grid {
     grid-template-columns: 1fr;
+  }
+
+  .infra-points {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .product-featured {
@@ -2131,32 +2208,38 @@ ol {
 
   .wizard-summary-actions {
     flex-direction: column;
-  }gantt {
+  }
+
+  .gantt {
     padding: 0.6rem 0.6rem 0.4rem;
   }
 
-  .gantt-row {
-    grid-template-columns: 6rem 1fr;
-    gap: 0.4rem;
+  .customer-split {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .gantt-scale {
-    gap: 0.4rem;
+  /* Drop the label column so the scale and bars run full width */
+  .gantt-label {
+    display: none;
+  }
+
+  .gantt-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .gantt-scale::before {
-    flex-basis: 6rem;
+    flex-basis: 0;
   }
 
   .gantt-today {
-    left: calc(6.4rem + (100% - 6.4rem) * 0.625);
+    left: 62.5%;
   }
 
   .quote-text {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
-
-  .
 
   .wizard-summary-actions .btn {
     width: 100%;
@@ -2196,6 +2279,10 @@ ol {
   .step-grid.four,
   .shot-grid,
   .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .infra-points {
     grid-template-columns: 1fr;
   }
 

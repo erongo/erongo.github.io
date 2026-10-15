@@ -1,5 +1,5 @@
 /* 
-   erongo.net -- single page site
+   erongo.net: single page site
    Design language: IBM-Carbon-inspired (same as site-oms)
    Sharp edges (2px), flat surfaces, no gradients, theme-aware tokens.
     */
@@ -19,7 +19,9 @@ li,
 p,
 ul,
 ol,
-figure {
+figure,
+dd,
+dt {
   margin: 0;
   padding: 0;
 }
@@ -57,6 +59,10 @@ figure {
   --active-bg: #e5e7eb;
   --focus-ring: rgba(37, 99, 235, 0.25);
 
+  /* WhatsApp brand (floating chat button) */
+  --wa: #25d366;
+  --wa-hover: #1ebe5b;
+
   /* Borders */
   --border: #e5e7eb;
   --border-strong: #d1d5db;
@@ -65,7 +71,7 @@ figure {
   /* Elevation only */
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  /* Background texture — decorative parallax shapes (see .section-bg) */
+  /* Background texture: decorative parallax shapes (see .section-bg) */
   --bg-shape-opacity: 0.1;
 }
 
@@ -100,6 +106,9 @@ figure {
   --border-strong: #4b5563;
   --border-focus: #3b82f6;
 
+  --wa: #25d366;
+  --wa-hover: #2ee274;
+
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
 
   --bg-shape-opacity: 0.09;
@@ -129,6 +138,9 @@ a {
 a:hover,
 a:focus-visible {
   color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
 }
 
 img {
@@ -164,6 +176,7 @@ ol {
 .skip-link:focus {
   left: 0.5rem;
   top: 0.5rem;
+  z-index: 101;
 }
 
 .visually-hidden {
@@ -201,8 +214,10 @@ ol {
   transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
   background: var(--hover-bg);
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -226,6 +241,23 @@ ol {
   border-color: var(--border-strong);
 }
 
+.btn-secondary {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--accent-hover);
+  filter: brightness(0.97);
+}
+
+[data-theme="dark"] .btn-secondary:hover,
+[data-theme="dark"] .btn-secondary:focus-visible {
+  filter: brightness(1.15);
+}
+
 .btn-lg {
   padding: 0.7rem 1.4rem;
   font-size: 1rem;
@@ -239,6 +271,16 @@ ol {
 .btn-block {
   display: flex;
   width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.btn-primary:disabled {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 /* --- Panels --- */
@@ -273,6 +315,11 @@ ol {
   gap: 0.55rem;
 }
 
+.brand:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: baseline;
@@ -287,7 +334,7 @@ ol {
 }
 
 .brand-sub {
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   color: var(--text-tertiary);
   border-left: 1px solid var(--border);
   padding-left: 0.55rem;
@@ -311,6 +358,7 @@ ol {
 .nav-links > a:not(.btn):hover,
 .nav-links > a:not(.btn):focus-visible {
   color: var(--text-primary);
+  text-decoration: none;
 }
 
 .nav-links > a:not(.btn).active {
@@ -401,13 +449,14 @@ ol {
    Hero
    ────────────────────────────────────────────── */
 .hero {
+  position: relative;
   padding: 4.5rem 0 4rem;
   border-bottom: 1px solid var(--border);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
 }
@@ -466,38 +515,67 @@ ol {
   background: var(--accent);
 }
 
-.hero-figure {
-  margin: 0;
+/* Solar-system artwork in the hero background: the full canvas is anchored
+   toward the bottom-right of the section so the sun and inner orbits sit
+   off-center and the outer edge of the outermost orbit runs off the edge.
+   Rendered 3x; the sun stays anchored to the same spot near the corner. */
+.hero-solar {
+  position: absolute;
+  right: -385px;
+  bottom: -364px;
+  width: 1080px;
+  height: 900px;
+  color: var(--text-primary);
 }
 
-.hero-figure .hero-illustration {
-  border: 1px solid var(--border-strong);
-  border-radius: 2px;
-  box-shadow: var(--shadow-md);
-  background: var(--bg-elevated);
-  padding: 2.25rem 1.75rem 1.75rem;
+/* Keep orbit lines and the sun's edge at 1px despite the 3x scale */
+.hero-solar circle {
+  vector-effect: non-scaling-stroke;
 }
 
-.hero-illustration svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  color: var(--accent);
+/* Orbits: 1px circular lines (inherited from the svg group) */
+.hero-solar .ill-secondary {
+  stroke: var(--text-tertiary);
 }
 
-/* currentColor must resolve per element so .ill-secondary works */
-.hero-illustration svg * {
-  stroke: currentColor;
+/* Earth's orbit is a dashed grey line */
+.hero-solar .ill-earth-orbit {
+  stroke: var(--text-tertiary);
+  stroke-dasharray: 3 5;
 }
 
-.hero-illustration .ill-secondary {
-  color: var(--text-tertiary);
+/* Sun: off-white dot (1px border keeps it defined on light backgrounds) */
+.hero-solar .ill-sun {
+  stroke: var(--border-strong);
+  fill: #f4f2ea;
 }
 
-.hero-figure figcaption {
-  margin-top: 0.6rem;
-  font-size: 0.78rem;
-  color: var(--text-tertiary);
+/* Planets: grey dots of various sizes */
+.hero-solar .ill-planet {
+  stroke: none;
+  fill: var(--text-secondary);
+}
+
+/* Earth: blue dot */
+.hero-solar .ill-earth {
+  stroke: none;
+  fill: #3b82f6;
+}
+
+/* Rotation is purely decorative; each planet orbits at its own speed */
+.hero-solar .ill-orbit {
+  transform-box: view-box;
+  transform-origin: 190px 160px;
+  animation: ill-orbit linear infinite;
+}
+
+@keyframes ill-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ──────────────────────────────────────────────
@@ -511,6 +589,12 @@ ol {
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
 }
 
 .section-head {
@@ -838,56 +922,65 @@ ol {
 /* ──────────────────────────────────────────────
    Products
    ────────────────────────────────────────────── */
+/* Pending-release products: a 2x2 grid of codename cards with a shared
+   footer (the "public access" status line). */
 .product-featured {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  padding: 2rem;
+  gap: 1.25rem;
+  padding: 1.5rem;
   margin-bottom: 1rem;
   border-color: var(--accent);
 }
 
-.product-featured .card-kicker {
-  margin-bottom: 0.5rem;
+.product-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
-.product-featured h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  margin-bottom: 0.7rem;
-}
-
-.product-featured p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  max-width: 34rem;
-}
-
-.product-featured .chip-row {
-  margin-top: 1rem;
-}
-
-.product-cta {
-  position: relative;
+.product-featured-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 240px;
-  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
   border-radius: 2px;
-  background-color: var(--bg-primary);
-  background-image: linear-gradient(rgba(31, 41, 55, 0.62), rgba(31, 41, 55, 0.62)), url("img/stock-burdened-with-paperwork.jpeg");
-  background-size: 100% 100%, 175%;
-  background-position: center;
+  background: var(--bg-elevated);
 }
 
-.product-cta .product-visit {
-  flex-basis: 100%;
+.product-featured-card .card-kicker {
+  margin-bottom: 0;
+}
+
+.product-featured-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Status tag sits below the name */
+.product-featured-card .tag {
+  margin: 0.15rem 0 0;
+}
+
+.product-featured-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.product-featured-cta {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.product-featured-note {
   font-size: 0.85rem;
   color: var(--text-tertiary);
 }
@@ -985,6 +1078,41 @@ ol {
   color: var(--text-tertiary);
 }
 
+/* ── In the lab ── */
+.lab-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0.35rem 0 1rem;
+}
+
+.lab-list {
+  list-style: none;
+}
+
+.lab-list li {
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.lab-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.lab-link {
+  color: var(--accent-text);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: 0.25rem;
+}
+
+.lab-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 .work-card h3 {
   font-size: 0.98rem;
   font-weight: 600;
@@ -1018,110 +1146,14 @@ ol {
   letter-spacing: 0.02em;
 }
 
+.card-view {
+  margin-top: 0.85rem;
+}
+
 /* ──────────────────────────────────────────────
-   Infrastructure diagram
+   Infrastructure metrics
    ────────────────────────────────────────────── */
-.infra-diagram {
-  margin-top: 2rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 2px;
-  background: var(--bg-elevated);
-  padding: 1.5rem 1.25rem 1rem;
-  overflow-x: auto;
-}
-
-.infra-diagram svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  min-width: 700px;
-  margin: 0 auto;
-}
-
-.infra-diagram figcaption {
-  margin-top: 0.9rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  text-align: center;
-}
-
-/* Diagram theme tokens -- flat, theme-aware, 2px radii */
-.dia-band {
-  fill: var(--bg-surface);
-  stroke: var(--border);
-}
-
-.dia-node {
-  fill: var(--bg-elevated);
-  stroke: var(--border-strong);
-}
-
-.dia-node-dash {
-  stroke-dasharray: 4 4;
-}
-
-.dia-node-accent {
-  fill: var(--accent);
-  stroke: var(--accent);
-}
-
-.dia-chip {
-  fill: var(--bg-surface);
-  stroke: var(--border);
-}
-
-.dia-arrow {
-  stroke: var(--text-tertiary);
-}
-
-.dia-arrowhead {
-  fill: var(--text-tertiary);
-}
-
-.dia-band-label {
-  fill: var(--text-tertiary);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
-.dia-label {
-  fill: var(--text-primary);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.dia-sub {
-  fill: var(--text-secondary);
-  font-size: 10px;
-}
-
-.dia-label-inverse {
-  fill: var(--text-inverse);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.dia-sub-inverse {
-  fill: var(--text-inverse);
-  opacity: 0.75;
-  font-size: 10px;
-}
-
-.dia-arrow-label {
-  fill: var(--text-secondary);
-  font-size: 10.5px;
-}
-
-.dia-chip-label {
-  fill: var(--text-secondary);
-  font-size: 11px;
-  font-weight: 500;
-}
-
-/* Points under the diagram */
+/* Points */
 .infra-points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1376,6 +1408,17 @@ ol {
   color: var(--text-tertiary);
 }
 
+.footer-legal a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-legal a:hover {
+  color: var(--accent);
+  border-bottom-color: currentColor;
+}
+
 /* ──────────────────────────────────────────────
    Reveal on scroll
    ────────────────────────────────────────────── */
@@ -1390,13 +1433,14 @@ ol {
   transform: none;
 }
 
-/* Card hover -- primary blue, low-impact. Declared after .reveal
+/* Card hover: primary blue, low-impact. Declared after .reveal
    so the combined transition list wins on reveal cards. */
 .feature-card,
 .step-card,
 .work-card,
 .infra-point,
-.product-card {
+.product-card,
+.cs-card {
   transition: opacity 240ms ease, transform 240ms ease, border-color 120ms ease;
 }
 
@@ -1404,7 +1448,8 @@ ol {
 .step-card:hover,
 .work-card:hover,
 .infra-point:hover,
-.product-card:hover {
+.product-card:hover,
+.cs-card:hover {
   border-color: var(--accent);
 }
 
@@ -1412,7 +1457,8 @@ ol {
 .step-card h3,
 .work-card h3,
 .infra-point h3,
-.product-card h3 {
+.product-card h3,
+.cs-card h3 {
   transition: color 120ms ease;
 }
 
@@ -1420,8 +1466,9 @@ ol {
 .step-card:hover h3,
 .work-card:hover h3,
 .infra-point:hover h3,
-.product-card:hover h3 {
-  color: var(--accent);
+.product-card:hover h3,
+.cs-card:hover h3 {
+  color: var(--accent-text);
 }
 
 /* ──────────────────────────────────────────────
@@ -1496,7 +1543,7 @@ ol {
   opacity: calc(var(--bg-shape-opacity) * 1.1);
 }
 
-/* Barely-visible dot grid -- blueprint paper under the infrastructure map */
+/* Barely-visible dot grid: blueprint paper under the infrastructure map */
 .bg-texture {
   position: absolute;
   inset: 0;
@@ -1808,6 +1855,15 @@ ol {
   box-shadow: 0 0 0 2px var(--focus-ring);
 }
 
+/* Radios and checkboxes are visually replaced by the option cards and
+   chips, so the browser ring would float over empty space. Draw it on
+   the card itself instead. */
+.wizard-option input[type="radio"]:focus-visible + .wizard-option-content,
+.wizard-chip input[type="checkbox"]:focus-visible + span {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
 .wizard-textarea {
   width: 100%;
   padding: 0.6rem 0.75rem;
@@ -1969,8 +2025,8 @@ ol {
 }
 
 .quote-dot {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--border-strong);
   cursor: pointer;
@@ -2137,9 +2193,12 @@ ol {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .product-featured {
+  .product-featured-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+  }
+
+  .delivery-guards-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2169,6 +2228,10 @@ ol {
     display: flex;
   }
 
+  .nav-tools {
+    margin-left: auto;
+  }
+
   .nav-links {
     position: absolute;
     top: 64px;
@@ -2192,6 +2255,10 @@ ol {
     padding: 0.7rem 0;
     border-bottom: 1px solid var(--border);
     font-size: 1rem;
+  }
+
+  .nav-links > a:not(.btn):focus-visible {
+    outline-offset: -2px;
   }
 
   .nav-links > a:not(.btn).active {
@@ -2291,9 +2358,584 @@ ol {
   }
 }
 
+/* ──────────────────────────────────────────────
+   Case studies (index grid + article pages)
+   ────────────────────────────────────────────── */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.cs-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.25rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cs-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+}
+
+.cs-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.cs-card-read {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* The whole card is the link: keep the underline off its inner text */
+.cs-card:hover,
+.cs-card:focus-visible,
+.cs-card:hover *,
+.cs-card:focus-visible * {
+  text-decoration: none;
+}
+
+/* Case study article pages (case-studies/*.html) */
+.case-study {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.breadcrumb li + li:before {
+  content: "/";
+  margin-right: 0.4rem;
+  color: var(--border-strong);
+}
+
+.breadcrumb a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--text-secondary);
+}
+
+.case-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.case-lede {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.case-body {
+  display: grid;
+  grid-template-columns: 15.5rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.case-facts {
+  position: sticky;
+  top: 4.5rem;
+  padding: 1.25rem;
+}
+
+.case-content {
+  min-width: 0;
+}
+
+.case-facts-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.case-facts-list dt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.1rem;
+}
+
+.case-facts-list dd {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.case-section {
+  margin-bottom: 2rem;
+}
+
+.case-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.case-section p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.case-section p:last-child {
+  margin-bottom: 0;
+}
+
+.case-footer-cta {
+  margin-top: 2.5rem;
+  padding: 1.75rem 1.5rem;
+}
+
+.case-footer-cta h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.case-footer-cta p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 860px) {
+  .case-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .case-facts {
+    position: static;
+  }
+
+  .case-hero h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Testimonials
+   ────────────────────────────────────────────── */
+.tst-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tst-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.4rem;
+}
+
+.tst-stars {
+  display: flex;
+  gap: 0.2rem;
+  color: var(--warning);
+  margin-bottom: 0.85rem;
+}
+
+.tst-stars svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.tst-quote {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.tst-byline {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.tst-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tst-name {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.tst-role {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+}
+
+.tst-link {
+  color: var(--accent);
+}
+
+.tst-foot {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.tst-foot a {
+  color: var(--accent);
+}
+
+/* ──────────────────────────────────────────────
+   Engagements (pricing sense)
+   ────────────────────────────────────────────── */
+.eng-note {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.eng-note a {
+  color: var(--accent);
+}
+
+.eng-cta {
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-elevated);
+}
+
+.eng-cta h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.eng-cta .btn {
+  margin-bottom: 0.75rem;
+}
+
+.eng-cta-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ──────────────────────────────────────────────
+   Delivery pipeline
+   ────────────────────────────────────────────── */
+.delivery-loop {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+/* Sub-head above the "rules that keep it fair" panel */
+.delivery-guards-head {
+  max-width: 44rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.delivery-guards-head h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.delivery-guards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2rem;
+}
+
+.delivery-guards-grid .feature-list {
+  margin-top: 0;
+}
+
+/* ──────────────────────────────────────────────
+   Who you're working with
+   ────────────────────────────────────────────── */
+.who-split {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  padding: 1.5rem;
+}
+
+.who-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.who-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.who-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background:
+    linear-gradient(135deg, transparent 47%, var(--border) 47%, var(--border) 53%, transparent 53%),
+    var(--bg-surface);
+}
+
+.who-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.who-photo-sub {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.who-text h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.who-sub {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+.who-text > p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  max-width: 54rem;
+}
+
+.who-quote {
+  margin: 0 0 1.3rem;
+  padding: 0.35rem 0 0.35rem 1rem;
+  border-left: 2px solid var(--accent);
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.who-guarantees {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem 1.25rem;
+}
+
+.who-guarantees li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.who-g-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.who-g-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ──────────────────────────────────────────────
+   CTA band: what happens next
+   ────────────────────────────────────────────── */
+.cta-next {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: left;
+  max-width: 44rem;
+  margin: 1.75rem auto;
+}
+
+.cta-next li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.cta-next strong {
+  color: var(--text-primary);
+}
+
+.cta-next-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+/* ──────────────────────────────────────────────
+   Floating WhatsApp
+   ────────────────────────────────────────────── */
+.wa-fab {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 2px;
+  background: var(--wa);
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.wa-fab:hover,
+.wa-fab:focus-visible {
+  background: var(--wa-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.wa-fab svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 860px) {
+  .tst-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .who-split {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .who-photo {
+    max-width: 260px;
+  }
+
+  .who-guarantees {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-next {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  /* app.js skips parallax, but undo any transform already applied */
+  .bg-shape {
+    transform: none !important;
   }
 
   .reveal {
@@ -2304,5 +2946,135 @@ ol {
 
   .bg-drift {
     animation: none;
+  }
+
+  .ill-orbit {
+    animation: none;
+  }
+
+  .wa-fab {
+    transition: none;
+  }
+}
+
+/* ── Legal pages (/privacy, /terms) ────────────────────────
+   Plain long-form document on the house design language. */
+
+.legal-section {
+  padding: 3rem 0 4rem;
+}
+
+.legal-panel {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.legal-panel h1 {
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.legal-panel .legal-intro {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.legal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.legal-panel h2 {
+  font-size: 1.25rem;
+  font-weight: 650;
+  margin: 2.25rem 0 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.legal-panel h2:first-of-type {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.legal-panel p {
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+
+.legal-panel p .muted,
+.legal-panel .muted {
+  color: var(--text-secondary);
+}
+
+.legal-panel ul,
+.legal-panel ol {
+  margin: 0 0 1rem 1.25rem;
+  line-height: 1.6;
+}
+
+.legal-panel li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-panel li::marker {
+  color: var(--text-tertiary);
+}
+
+.legal-panel a {
+  color: var(--accent-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.legal-panel a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent);
+}
+
+.legal-panel code {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.1em 0.35em;
+}
+
+.legal-note {
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  padding: 0.9rem 1.1rem;
+  margin: 1.25rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.legal-note p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .legal-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .legal-panel h1 {
+    font-size: 1.6rem;
   }
 }

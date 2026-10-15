@@ -1,4 +1,4 @@
-/* Theme toggle -- defaults to light; an explicit user choice persists to localStorage */
+/* Theme toggle: defaults to light; an explicit user choice persists to localStorage */
 (function () {
   var STORAGE_KEY = 'erongo-theme';
 

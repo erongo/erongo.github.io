@@ -8,13 +8,23 @@ dark variant, `#2563eb` accent).
 
 | File | Purpose |
 |------|---------|
-| `index.html` | The single page: hero, Development, Process (Plan/Build/Connect/Automate), Products, Past Work, Infrastructure, CTA |
+| `index.html` | The single page: hero, Development, Process (Plan/Build/Connect/Automate), Products, Past Work, Case Studies, CTA |
 | `scope.html` | "Scope Your Project" wizard -- interactive project-scoping tool served at `/scope` (canonical) and `/scope.html` |
+| `privacy.html` | Privacy Policy (PoPI) -- served at `/privacy` (canonical) and `/privacy.html` |
+| `terms.html` | Terms of Use (CPA plain-language) -- served at `/terms` (canonical) and `/terms.html` |
 | `style.css` | Design tokens + all components (page + wizard) |
 | `app.js` | Mobile nav, scroll-spy, reveal-on-scroll, footer year |
 | `theme.js` | Theme toggle (respects `prefers-color-scheme`, persists to `localStorage`) |
 | `img/` | OG card (SVG + PNG), favicons, PWA manifest icons |
-| `sitemap.xml` | `/` + `/scope` |
+| `sitemap.xml` | `/` + `/scope` + `/privacy` + `/terms` + case studies |
+
+## Legal pages
+
+`privacy.html` and `terms.html` are the canonical legal documents for all
+erongo properties (erongo.net, the service sites, and the SaaS products);
+the service-site footers link here with absolute URLs. They are plain
+static HTML in the house design language (`.legal-doc` styles in
+`style.css`). Erongo Software, Walvis Bay, Namibia.
 
 ## Page sections (single page)
 
@@ -23,7 +33,7 @@ dark variant, `#2563eb` accent).
 3. **Process** (`#process`) -- Plan / Build / Connect / Automate
 4. **Products** (`#products`) -- OMS (flagship, → oms-platform.net) + unreleased products (redacted)
 5. **Past work** (`#work`) -- selection of client projects with tech tags
-6. **Infrastructure** (`#infrastructure`) -- the backend services (api, auth, billing, license, portal, support, dash, git)
+6. **Track record** (`#track-record`) -- track-record metrics (dev hours, automated tests, runbooks) and the "we run on what we sell" internal tools
 
 Public services (radio, headlines) were dropped with the single-page rewrite -- the
 radio service was retired in the erongo infra in 2026-09.

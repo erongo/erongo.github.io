@@ -34,11 +34,11 @@
   <meta name="apple-mobile-web-app-title" content="erongo">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <link rel="manifest" href="/img/site.webmanifest" />
 
   <link rel="canonical" href="https://erongo.net/scope">
 
@@ -86,14 +86,14 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-    <header class="site-nav">
+    <header class="site-nav" id="top">
       <div class="container nav-inner">
         <a class="brand" href="/" aria-label="Erongo Software - home">
           <span class="brand-mark">erongo<span class="dot">.</span></span>
           <span class="brand-sub">scope your project</span>
         </a>
 
-        <nav class="nav-links" aria-label="Primary">
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
           <a href="/">Back to home</a>
         </nav>
 
@@ -101,6 +101,9 @@
           <button class="theme-toggle" type="button" aria-label="Switch theme">
             <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4l1.4-1.4"/></svg>
             <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+          <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
@@ -149,28 +152,28 @@
                   <input type="radio" name="project_type" value="customer-facing" required>
                   <span class="wizard-option-content">
                     <span class="wizard-option-title">A website or app my customers use</span>
-                    <span class="wizard-option-desc">Something the public or your clients interact with -- like a store, booking system, or portal.</span>
+                    <span class="wizard-option-desc">Something the public or your clients interact with: a store, booking system, or portal.</span>
                   </span>
                 </label>
                 <label class="wizard-option" data-value="internal-tool">
                   <input type="radio" name="project_type" value="internal-tool">
                   <span class="wizard-option-content">
                     <span class="wizard-option-title">An internal tool for my team</span>
-                    <span class="wizard-option-desc">Something your employees use daily -- like a dashboard, CRM, or inventory tracker.</span>
+                    <span class="wizard-option-desc">Something your employees use daily: a dashboard, CRM, or inventory tracker.</span>
                   </span>
                 </label>
                 <label class="wizard-option" data-value="integration">
                   <input type="radio" name="project_type" value="integration">
                   <span class="wizard-option-content">
                     <span class="wizard-option-title">Connect two systems that don't talk</span>
-                    <span class="wizard-option-desc">Make your existing software share data -- like syncing your accounting with your warehouse system.</span>
+                    <span class="wizard-option-desc">Make your existing software share data, such as syncing your accounting with your warehouse system.</span>
                   </span>
                 </label>
                 <label class="wizard-option" data-value="automation">
                   <input type="radio" name="project_type" value="automation">
                   <span class="wizard-option-content">
                     <span class="wizard-option-title">Automate a repetitive process</span>
-                    <span class="wizard-option-desc">Replace manual work -- like auto-generating reports, processing invoices, or sending notifications.</span>
+                    <span class="wizard-option-desc">Replace manual work, such as auto-generating reports, processing invoices, or sending notifications.</span>
                   </span>
                 </label>
                 <label class="wizard-option" data-value="unsure">
@@ -252,7 +255,7 @@
             <fieldset class="wizard-step" data-step="2z">
               <legend class="visually-hidden">Describe your problem</legend>
               <h2 class="wizard-question"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>What problem are you trying to solve?</h2>
-              <p class="wizard-hint">Don't worry about technical details. Just describe the situation in your own words -- what's frustrating, what's taking too long, or what opportunity you want to capture.</p>
+              <p class="wizard-hint">Don't worry about technical details. Just describe the situation in your own words: what's frustrating, what's taking too long, or what opportunity you want to capture.</p>
               <div class="wizard-input-group">
                 <textarea id="problem_description" name="problem_description" class="wizard-textarea" placeholder="E.g. 'We spend 3 hours every morning compiling sales data from 5 different spreadsheets...'"></textarea>
               </div>
@@ -294,7 +297,7 @@
                 <label class="wizard-option" data-value="recommend">
                   <input type="radio" name="platform" value="recommend">
                   <span class="wizard-option-content">
-                    <span class="wizard-option-title">Not sure -- recommend for me</span>
+                    <span class="wizard-option-title">Not sure, recommend for me</span>
                     <span class="wizard-option-desc">We'll suggest the best fit based on your answers.</span>
                   </span>
                 </label>
@@ -457,6 +460,25 @@
                   </span>
                 </label>
               </div>
+
+              <h2 class="wizard-question" style="margin-top: 1.5rem;"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Where is your company based?</h2>
+              <p class="wizard-hint">Rates differ for Namibian and international clients.</p>
+              <div class="wizard-options">
+                <label class="wizard-option" data-value="namibia">
+                  <input type="radio" name="region" value="namibia">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Namibia</span>
+                    <span class="wizard-option-desc">Local engagement, local rates.</span>
+                  </span>
+                </label>
+                <label class="wizard-option" data-value="international">
+                  <input type="radio" name="region" value="international">
+                  <span class="wizard-option-content">
+                    <span class="wizard-option-title">Outside Namibia (international)</span>
+                    <span class="wizard-option-desc">Remote engagement across time zones, international rates.</span>
+                  </span>
+                </label>
+              </div>
             </fieldset>
 
             <!-- Summary step -->
@@ -488,11 +510,11 @@
       </section>
     </main>
 
-    <!--  Footer  -->
-    <footer class="site-footer">
+  <!--  Footer  -->
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="/" aria-label="Erongo Software - home">
+        <a class="brand" href="#top" aria-label="Erongo Software, back to top">
           <span class="brand-mark">erongo<span class="dot">.</span></span>
         </a>
         <p>Software development and commercial products. Based in Namibia, delivering worldwide.</p>
@@ -505,8 +527,9 @@
           <li><a href="/#process">Workflow</a></li>
           <li><a href="/#products">Products</a></li>
           <li><a href="/#work">Past work</a></li>
-          <li><a href="/#infrastructure">Infrastructure</a></li>
           <li><a href="/scope">Scope a project</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
         </ul>
       </nav>
 
@@ -516,7 +539,6 @@
           <li><a href="https://portal.erongo.net" target="_blank" rel="noopener">Portal</a></li>
           <li><a href="https://tracker.erongo.net" target="_blank" rel="noopener">Tracker</a></li>
           <li><a href="https://support.erongo.net" target="_blank" rel="noopener">Support</a></li>
-          <li><a href="https://oms-platform.net" target="_blank" rel="noopener">OMS Platform</a></li>
         </ul>
       </nav>
 
@@ -525,18 +547,24 @@
         <ul>
           <li><a href="mailto:contact@erongo.net">contact@erongo.net</a></li>
           <li><a href="https://calendar.app.google/wCDSxwcUXTgJguqd6" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="https://whatsapp.com/channel/0029Vb97eb57YSdAhocR5d3c" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://www.facebook.com/erongo.software" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/erongo.software" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/erongo-software" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://share.google/SK0LIRSKqzGTpiNqe" target="_blank" rel="noopener">Google</a></li>
           <li><a href="https://github.com/erongo" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="container footer-legal">
-      <p>&copy; <span id="year">2026</span> Erongo Software.</p>
-      <p>Made in Namibia.</p>
+      <p>© <span id="year">2026</span> Erongo Software · Walvis Bay, Namibia.</p>
+      <p>Made in Namibia · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Use</a></p>
     </div>
-    </footer>
+  </footer>
 
   <script src="theme.js"></script>
+  <script src="app.js" defer></script>
   <script>
     (() => {
       'use strict';
@@ -564,7 +592,7 @@
         },
         '2a': () => '3',
         '2b': () => '3',
-        '2z': () => '6', // Skip platform, features, requirements for unsure path -- go straight to timeline
+        '2z': () => '6', // Skip platform, features, requirements for the unsure path; go straight to timeline
         3: () => '4',
         4: () => '5',
         5: () => '6',
@@ -718,9 +746,10 @@
           return false;
         }
 
-        // For step 6, require timeline and budget
-        if (stepId === 6) {
-          if (!state.answers.timeline || !state.answers.budget) {
+        // For step 6, require timeline, budget and region.
+        // Note: stepIds travel as strings through the routing map, so compare as strings.
+        if (String(stepId) === '6') {
+          if (!state.answers.timeline || !state.answers.budget || !state.answers.region) {
             return false;
           }
         }
@@ -768,68 +797,131 @@
 
         switch (type) {
           case 'customer-facing':
-            return 'Web browser -- best reach, works on any device without installation';
+            return 'Web browser: best reach, works on any device without installation';
           case 'internal-tool':
-            return 'Web browser -- easy to deploy, update, and access from any computer';
+            return 'Web browser: easy to deploy, update, and access from any computer';
           case 'integration':
-            return 'API-only -- no user interface needed, just reliable system-to-system connections';
+            return 'API-only: no user interface needed, just reliable system-to-system connections';
           case 'automation':
-            return 'API-only or web dashboard -- automated backend with an optional monitoring interface';
+            return 'API-only or web dashboard: automated backend with an optional monitoring interface';
           case 'unsure':
-            return 'To be discussed -- we\'ll recommend the best fit after understanding your problem';
+            return 'To be discussed: we\'ll recommend the best fit after understanding your problem';
           default:
             return 'Web browser (recommended)';
         }
       }
 
-      // --- Complexity scoring ---
-      function calculateComplexity() {
-        let score = 0;
-        const reasons = [];
+      // --- Project effort estimation (hours-based) ---
+      // Each building block carries a weight in estimated work-hours. The total
+      // drives both the duration and the cost band shown to the visitor.
+      //
+      // Base effort per project type (design, setup, core build), before
+      // any features. Tuned so a bare-bones build lands near the "starts"
+      // around" figures on the A-F cards in index.html (at local rates).
+      const baseHours = {
+        'customer-facing': 120, // ~80 hrs of feature work on top -> "internal tools / portals"
+        'internal-tool': 80,
+        'integration': 60,
+        'automation': 40,
+        'unsure': 50
+      };
 
-        // Base score by project type
-        const type = state.answers.project_type;
-        if (type === 'customer-facing') score += 2;
-        else if (type === 'internal-tool') score += 1;
-        else if (type === 'integration') score += 1;
-        else if (type === 'automation') score += 1;
-        else if (type === 'unsure') score += 0;
+      // Effort per feature. Every feature floors at ~2 weeks (80 hrs) of real
+      // work; heavier features (payments, integrations, AI) cost more.
+      const featureHours = {
+        'user-accounts': 80,
+        'payments': 120,
+        'file-uploads': 80,
+        'search': 80,
+        'notifications': 100,
+        'admin-dashboard': 100,
+        'third-party-integrations': 120,
+        'ai-features': 160,
+        'multi-language': 80,
+        'reporting': 100
+      };
+      const DEFAULT_FEATURE_HOURS = 80; // any feature typed in by hand
 
-        // Features
-        const features = state.answers.features || [];
-        const totalFeatures = features.length + state.customFeatures.length;
-        if (totalFeatures >= 5) { score += 3; reasons.push('many features'); }
-        else if (totalFeatures >= 3) { score += 2; reasons.push('multiple features'); }
-        else if (totalFeatures >= 1) { score += 1; }
+      // Extra effort from hard requirements/constraints.
+      const requirementHours = {
+        'compliance': 80,
+        'sensitive-data': 40,
+        'existing-software': 80,
+        'high-scale': 80,
+        'offline': 80,
+        'specific-tech': 40
+      };
 
-        // Specific complex features
-        if (features.includes('payments')) { score += 1; reasons.push('payment processing'); }
-        if (features.includes('ai-features')) { score += 1; reasons.push('AI features'); }
-        if (features.includes('notifications')) { score += 1; reasons.push('real-time features'); }
-        if (features.includes('third-party-integrations')) { score += 1; reasons.push('third-party integrations'); }
+      // Platform multiplier (native mobile/desktop cost more than web).
+      const platformMult = {
+        'web': 1,
+        'api': 1,
+        'desktop': 1.25,
+        'mobile': 1.5,
+        'recommend': 1.15
+      };
 
-        // Requirements
+      const HOURS_PER_WEEK = 40; // solo delivery capacity
+      const BUFFER = 1.1;        // ~10% for scoping, revisions, change requests
+      const LARGE_HOURS = 500;   // engagements at/above this get dedicated focus
+
+      // Urgency comes from the timeline answer. Urgent work costs more AND
+      // gets dedicated focus; flexible work is cheaper but shares the
+      // developer's time with other live projects.
+      const urgencyByTimeline = {
+        'asap': 'urgent',
+        '1-3-months': 'normal',
+        '3-6-months': 'flexible',
+        'flexible': 'flexible'
+      };
+      // Solo developer: how many projects run concurrently. Dedicated focus
+      // for urgent work and large engagements; otherwise assume 2.
+      const concurrencyFor = (urgency, hours) => (urgency === 'urgent' || hours >= LARGE_HOURS) ? 1 : 2;
+
+      function estimateProject() {
+        const type = state.answers.project_type || 'unsure';
+        const features = (state.answers.features || []).concat(state.customFeatures || []);
         const requirements = state.answers.requirements || [];
-        if (requirements.includes('compliance')) { score += 2; reasons.push('regulatory compliance'); }
-        if (requirements.includes('sensitive-data')) { score += 1; reasons.push('sensitive data handling'); }
-        if (requirements.includes('high-scale')) { score += 1; reasons.push('high scale requirements'); }
-        if (requirements.includes('offline')) { score += 1; reasons.push('offline capability'); }
-        if (requirements.includes('existing-software')) { score += 1; reasons.push('existing system integration'); }
+        const platform = state.answers.platform || 'recommend';
+        const urgency = urgencyByTimeline[state.answers.timeline] || 'normal';
 
-        // Platform complexity
-        const platform = state.answers.platform;
-        if (platform === 'mobile') score += 1;
-        if (platform === 'desktop') score += 1;
+        const reasons = [];
+        let hours = baseHours[type] || 50;
 
-        // Determine tier
-        if (score >= 7) return { tier: 'Large', label: '🔴 Large', desc: 'This is a substantial project with multiple moving parts. It will likely involve phased delivery over several months.', reasons };
-        if (score >= 4) return { tier: 'Medium', label: '🟡 Medium', desc: 'This is a solid project with meaningful scope. Expect a focused build over a few weeks to months.', reasons };
-        return { tier: 'Small', label: '🟢 Small', desc: 'This is a focused project with a clear scope. Good candidate for a quick turnaround.', reasons };
+        // Features: each one is weighted, real work.
+        hours += features.reduce((sum, f) => sum + (featureHours[f] || DEFAULT_FEATURE_HOURS), 0);
+        if (features.length >= 4) reasons.push(features.length + ' features');
+        else if (features.length >= 2) reasons.push(features.length + ' features');
+        else if (features.length === 1) reasons.push('1 feature');
+
+        // Requirements.
+        requirements.forEach(r => {
+          if (requirementHours[r]) reasons.push(formatRequirementLabel(r).toLowerCase());
+          hours += requirementHours[r] || 0;
+        });
+
+        // Platform.
+        hours = Math.round(hours * (platformMult[platform] || 1));
+
+        // Buffer.
+        hours = Math.round(hours * BUFFER);
+
+        // Calendar duration accounts for concurrent projects: a solo
+        // developer splits ~40 hrs/week across what they are running.
+        const weeks = hours / (HOURS_PER_WEEK / concurrencyFor(urgency, hours));
+
+        // Tier by scope (work-hours), not schedule.
+        let tier, label, desc;
+        if (hours >= LARGE_HOURS) { tier = 'Large'; label = '🔴 Large'; desc = 'A substantial build with multiple moving parts. Expect phased delivery over several months.'; }
+        else if (hours >= 100) { tier = 'Medium'; label = '🟡 Medium'; desc = 'A solid project with meaningful scope. Expect a focused build over a few weeks to months.'; }
+        else { tier = 'Small'; label = '🟢 Small'; desc = 'A focused project with a clear scope. Good candidate for a quick turnaround.'; }
+
+        return { tier, label, desc, reasons, hours, weeks, urgency };
       }
 
       // --- Generate summary ---
       function generateSummary() {
-        const complexity = calculateComplexity();
+        const complexity = estimateProject();
         const platform = !state.answers.platform || state.answers.platform === 'recommend'
           ? recommendPlatform()
           : formatPlatform(state.answers.platform);
@@ -919,6 +1011,18 @@
               ${complexity.reasons.length > 0 ? `<p class="complexity-reasons">Based on: ${complexity.reasons.join(', ')}</p>` : ''}
             </div>`;
 
+        html += `
+            <div class="wizard-summary-section">
+              <h3>Client location</h3>
+              <p>${formatRegion(state.answers.region)}</p>
+            </div>`;
+
+        html += `
+            <div class="wizard-summary-section">
+              <h3>Typical Investment</h3>
+              <p>${estimateRange(complexity, state.answers.region)}. Your exact quote comes with the written scope, within 2 business days of our meeting to discuss your requirements.</p>
+            </div>`;
+
         if (state.answers.timeline) {
           html += `
             <div class="wizard-summary-section">
@@ -939,15 +1043,16 @@
         summaryDiv.innerHTML = html;
 
         // Build mailto link
-        buildEmailLink(projectType, platform, allFeatures, requirements, complexity);
+        buildEmailLink(projectType, platform, allFeatures, requirements, complexity, state.answers.region);
       }
 
-      function buildEmailLink(projectType, platform, features, requirements, complexity) {
+      function buildEmailLink(projectType, platform, features, requirements, complexity, region) {
         const lines = [
           'Project Brief (from erongo.net scoping wizard)',
           '',
           `Project Type: ${projectType}`,
           `Platform: ${platform}`,
+          `Location: ${formatRegion(region)}`,
         ];
 
         if (features.length > 0) {
@@ -967,7 +1072,12 @@
         }
 
         lines.push('');
-        lines.push(`Complexity: ${complexity.tier} -- ${complexity.desc}`);
+        lines.push(`Complexity: ${complexity.tier}. ${complexity.desc}`);
+        lines.push(`Typical investment: ${estimateRange(complexity, region)}`);
+        // Raw effort estimate is for our own scoping only, not shown on the
+        // public wizard result, so it can't be used to derive our rate card.
+        lines.push(`Estimated effort: ~${complexity.hours} hours of work`);
+        lines.push('Your exact quote comes with the written scope, within 2 business days of our meeting to discuss your requirements.');
 
         if (state.answers.timeline) {
           lines.push(`Timeline: ${formatTimeline(state.answers.timeline)}`);
@@ -1033,9 +1143,61 @@
         return map[val] || val;
       }
 
+      // --- Investment ranges ---
+      // Cost = estimated work-hours x internal rate card. The rate card is
+      // internal only, and the visitor is never shown raw hours, only a
+      // rounded cost range, so nobody can reverse-engineer our hourly
+      // rates from the site. Keep in sync with the A-F cards in index.html.
+      const rateCard = {
+        // N$ per work-hour, by client origin and urgency.
+        namibia: { flexible: 450, normal: 650, urgent: 850 },
+        international: { flexible: 850, normal: 1100, urgent: 1300 }
+      };
+
+      // Top of the range adds ~30% for the unknowns every project carries:
+      // scope creep, change requests, revisions, process re-alignment.
+      const RANGE_SPREAD = 1.3;
+      const ROUND_TO = 5000; // keep published numbers clean
+
+      // Human duration phrasing for the estimate.
+      function describeDuration(weeks) {
+        if (weeks < 1) return 'a couple of weeks';
+        if (weeks < 2) return 'under 2 weeks';
+        if (weeks < 4) return 'a few weeks';
+        if (weeks < 8) return '4-8 weeks';
+        if (weeks < 13) return '2-3 months';
+        if (weeks < 26) return '3-6 months';
+        return '6+ months (phased delivery)';
+      }
+
+      function formatNaira(n) {
+        return 'N$' + (Math.round(n / ROUND_TO) * ROUND_TO).toLocaleString('en-US');
+      }
+
+      // estimate = { hours, weeks, urgency } from estimateProject(); region = 'namibia' | 'international'
+      function estimateRange(estimate, region) {
+        const rates = rateCard[region] || rateCard.namibia;
+        const rate = rates[estimate.urgency] || rates.normal;
+        // Round the low end UP so the published range never anchors below
+        // the true minimum cost of the work.
+        const lo = Math.max(ROUND_TO, Math.ceil((estimate.hours * rate) / ROUND_TO) * ROUND_TO);
+        const hi = Math.ceil((estimate.hours * rate * RANGE_SPREAD) / ROUND_TO) * ROUND_TO;
+        const range = lo === hi ? formatNaira(lo) : `${formatNaira(lo)} - ${formatNaira(hi)}`;
+        const phased = estimate.tier === 'Large' ? ', delivered in phases' : '';
+        return `projects like this typically land around ${range}${phased}. An estimated ${describeDuration(estimate.weeks)} of delivery time`;
+      }
+
+      function formatRegion(val) {
+        const map = {
+          'namibia': 'Namibia (local rates)',
+          'international': 'International (international rates)'
+        };
+        return map[val] || 'To be confirmed';
+      }
+
       function formatTimeline(val) {
         const map = {
-          'asap': 'ASAP -- urgent',
+          'asap': 'ASAP (urgent)',
           '1-3-months': 'Within 1-3 months',
           '3-6-months': 'Within 3-6 months',
           'flexible': 'Flexible'
@@ -1117,7 +1279,7 @@
         }
       });
 
-      // Radio button selection -- highlight selected option
+      // Radio button selection: highlight the selected option
       form.addEventListener('change', (e) => {
         if (e.target.type === 'radio') {
           const fieldset = e.target.closest('.wizard-options');
@@ -1134,8 +1296,10 @@
       // Keyboard navigation
       form.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
-          // Don't submit on Enter for textareas
-          if (document.activeElement.tagName === 'TEXTAREA') return;
+          const t = document.activeElement;
+          // Don't advance on Enter inside the textarea, or in the custom
+          // feature input (where Enter means "add this chip")
+          if (t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && t.id === 'feature_other')) return;
           e.preventDefault();
           goNext();
         }
@@ -1146,6 +1310,11 @@
       showStep(1);
     })();
   </script>
+
+  <!--  Floating WhatsApp  -->
+  <a class="wa-fab" href="https://wa.me/marthinus.x" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
 </body>
 
 </html>

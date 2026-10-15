@@ -1,4 +1,4 @@
-/* erongo.net -- nav, scroll-spy, reveal on scroll, footer year. */
+/* erongo.net: nav, scroll-spy, reveal on scroll, footer year. */
 (function () {
   'use strict';
 
@@ -127,16 +127,16 @@
       'We want to know who our best customers are and reach them automatically when they are due for a reorder.',
       'We need a system that records every delivery and invoice, so we always know who owes us what.',
       'I need a portal where our customers can log in and see their orders, invoices and delivery status themselves.',
-      'We want reports we can actually trust -- sales, margins and stock value without a day of spreadsheet work.',
+      'We want reports we can actually trust: sales, margins and stock value without a day of spreadsheet work.',
       'We need a system that checks quotes against live stock and pricing before anyone sends them out.',
       'I need an app that turns our paper job cards into a trackable workflow, so nothing slips through.',
-      'We want all our data in one place -- sales, stock and customers -- instead of five different spreadsheets.',
+      'We want all our data in one place: sales, stock and customers, instead of five different spreadsheets.',
       'We need a system that syncs our online store with the warehouse, so we never sell what we do not have.',
       'I need a way to capture leads from our website and WhatsApp, and follow up on every single one.',
       'We want to know our true costs per job, so our quotes stop being guesses.',
       'We need a system that handles returns and warranties without the paperwork piling up.',
       'I need an app for our delivery team that shows the day\'s route and confirms deliveries as they happen.',
-      'We want a simple tool our staff can actually use -- not something that needs a training week.'
+      'We want a simple tool our staff can actually use, not something that needs a training week.'
     ];
 
     var dots = Array.prototype.slice.call(figure.querySelectorAll('.quote-dot'));
@@ -216,7 +216,7 @@
     var PER_PAGE = 2;
     var cards = Array.prototype.slice.call(grid.querySelectorAll('.work-card'));
     var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
-    var page = 1 + Math.floor(Math.random() * pages); // open on a random page
+    var page = 1; // start on first page
 
     function show() {
       cards.forEach(function (card, i) {

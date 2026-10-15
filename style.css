@@ -1151,6 +1151,35 @@ ol {
 }
 
 /* ──────────────────────────────────────────────
+   Experiments grid
+   ────────────────────────────────────────────── */
+.experiments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.experiment-card {
+  max-width: 100%;
+}
+
+@media (max-width: 960px) {
+  .experiments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experiment-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .experiments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ──────────────────────────────────────────────
    Infrastructure metrics
    ────────────────────────────────────────────── */
 /* Points */
@@ -2555,6 +2584,15 @@ ol {
 @media (max-width: 640px) {
   .cs-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Experiments grid responsive
+   ────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .experiment-card {
+    max-width: 100%;
   }
 }
 

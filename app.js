@@ -241,6 +241,42 @@
     show();
   }
 
+  /* ── Experiments pager ── */
+  function wireExperimentsPager() {
+    var grid = document.querySelector('.experiments-grid');
+    var prev = document.getElementById('expPrev');
+    var next = document.getElementById('expNext');
+    var count = document.getElementById('expCount');
+    if (!grid || !prev || !next || !count) return;
+
+    var PER_PAGE = 2;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.experiment-card'));
+    var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
+    var page = 1;
+
+    function show() {
+      cards.forEach(function (card, i) {
+        var on = i >= (page - 1) * PER_PAGE && i < page * PER_PAGE;
+        card.classList.toggle('work-card--hidden', !on);
+      });
+      count.textContent = page + ' / ' + pages;
+      prev.disabled = pages <= 1;
+      next.disabled = pages <= 1;
+    }
+
+    prev.addEventListener('click', function () {
+      page = page > 1 ? page - 1 : pages;
+      show();
+    });
+
+    next.addEventListener('click', function () {
+      page = page < pages ? page + 1 : 1;
+      show();
+    });
+
+    show();
+  }
+
   wireNav();
   wireScrollSpy();
   wireReveal();
@@ -248,4 +284,5 @@
   wireQuoteRotator();
   wireYear();
   wireWorkPager();
+  wireExperimentsPager();
 })();

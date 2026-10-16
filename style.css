@@ -1151,25 +1151,98 @@ ol {
 }
 
 /* ──────────────────────────────────────────────
-   Experiments grid
+   Tolk feature banner (above experiments grid)
+   ────────────────────────────────────────────── */
+.experiment-feature {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.experiment-feature-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.15rem;
+  color: var(--accent);
+}
+
+.experiment-feature h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.experiment-feature-body p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 62ch;
+}
+
+.experiment-feature .btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.feature-badge {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-text);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  padding: 0.08rem 0.45rem;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .experiment-feature {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experiment-feature .btn {
+    margin-left: 0;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Experiments grid (paginated, see wirePager in app.js)
    ────────────────────────────────────────────── */
 .experiments-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .experiment-card {
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.experiment-card--hidden {
+  display: none;
+}
+
+/* Pin the card CTA to the bottom so cards align per row */
+.experiment-card .card-view {
+  margin-top: auto;
+  padding-top: 0.85rem;
 }
 
 @media (max-width: 960px) {
   .experiments-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .experiment-card {
-    max-width: 100%;
   }
 }
 
@@ -2584,15 +2657,6 @@ ol {
 @media (max-width: 640px) {
   .cs-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* ──────────────────────────────────────────────
-   Experiments grid responsive
-   ────────────────────────────────────────────── */
-@media (max-width: 960px) {
-  .experiment-card {
-    max-width: 100%;
   }
 }
 

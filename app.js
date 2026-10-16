@@ -205,59 +205,22 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
-  /* ── Project pager: page through the work grid, start on a random page ── */
-  function wireWorkPager() {
-    var grid = document.querySelector('.work-grid');
-    var prev = document.getElementById('workPrev');
-    var next = document.getElementById('workNext');
-    var count = document.getElementById('workCount');
+  /* ── Grid pager: page through a grid of cards (work, experiments) ── */
+  function wirePager(gridSel, cardSel, prevId, nextId, countId, perPage, hiddenClass) {
+    var grid = document.querySelector(gridSel);
+    var prev = document.getElementById(prevId);
+    var next = document.getElementById(nextId);
+    var count = document.getElementById(countId);
     if (!grid || !prev || !next || !count) return;
 
-    var PER_PAGE = 2;
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.work-card'));
-    var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(cardSel));
+    var pages = Math.max(1, Math.ceil(cards.length / perPage));
     var page = 1; // start on first page
 
     function show() {
       cards.forEach(function (card, i) {
-        var on = i >= (page - 1) * PER_PAGE && i < page * PER_PAGE;
-        card.classList.toggle('work-card--hidden', !on);
-      });
-      count.textContent = page + ' / ' + pages;
-      prev.disabled = pages <= 1;
-      next.disabled = pages <= 1;
-    }
-
-    prev.addEventListener('click', function () {
-      page = page > 1 ? page - 1 : pages;
-      show();
-    });
-
-    next.addEventListener('click', function () {
-      page = page < pages ? page + 1 : 1;
-      show();
-    });
-
-    show();
-  }
-
-  /* ── Experiments pager ── */
-  function wireExperimentsPager() {
-    var grid = document.querySelector('.experiments-grid');
-    var prev = document.getElementById('expPrev');
-    var next = document.getElementById('expNext');
-    var count = document.getElementById('expCount');
-    if (!grid || !prev || !next || !count) return;
-
-    var PER_PAGE = 2;
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.experiment-card'));
-    var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
-    var page = 1;
-
-    function show() {
-      cards.forEach(function (card, i) {
-        var on = i >= (page - 1) * PER_PAGE && i < page * PER_PAGE;
-        card.classList.toggle('work-card--hidden', !on);
+        var on = i >= (page - 1) * perPage && i < page * perPage;
+        card.classList.toggle(hiddenClass, !on);
       });
       count.textContent = page + ' / ' + pages;
       prev.disabled = pages <= 1;
@@ -283,6 +246,6 @@
   wireParallax();
   wireQuoteRotator();
   wireYear();
-  wireWorkPager();
-  wireExperimentsPager();
+  wirePager('.work-grid', '.work-card', 'workPrev', 'workNext', 'workCount', 2, 'work-card--hidden');
+  wirePager('.experiments-grid', '.experiment-card', 'expPrev', 'expNext', 'expCount', 3, 'experiment-card--hidden');
 })();

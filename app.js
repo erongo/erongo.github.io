@@ -68,53 +68,6 @@
     els.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ── Subtle parallax on decorative background shapes ──
-     Shapes drift a fraction slower than the scroll, so they read
-     as a calm background layer. No-op when there are no shapes or
-     the user prefers reduced motion. */
-  function wireParallax() {
-    var shapes = Array.prototype.slice.call(document.querySelectorAll('.bg-shape[data-speed]'));
-    if (!shapes.length) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    var items = shapes.map(function (el) {
-      return { el: el, speed: parseFloat(el.getAttribute('data-speed')) || 0, top: 0, h: 0 };
-    });
-
-    // Cache each shape's document-space top edge (measured with the
-    // transform reset so the reading is stable).
-    function measure() {
-      items.forEach(function (it) { it.el.style.transform = 'none'; });
-      var y = window.pageYOffset;
-      items.forEach(function (it) {
-        var rect = it.el.getBoundingClientRect();
-        it.top = rect.top + y;
-        it.h = rect.height;
-      });
-    }
-
-    var ticking = false;
-    function update() {
-      ticking = false;
-      var y = window.pageYOffset;
-      var center = window.innerHeight / 2;
-      items.forEach(function (it) {
-        var shapeCenter = it.top - y + it.h / 2;   // shape centre in viewport space
-        var offset = center - shapeCenter;          // + above centre, - below
-        it.el.style.transform = 'translate3d(0,' + (offset * it.speed).toFixed(1) + 'px,0)';
-      });
-    }
-
-    function onScroll() {
-      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-    }
-
-    measure();
-    update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', function () { measure(); onScroll(); }, { passive: true });
-  }
-
   /* ── Quote rotator: cycle through common SME requests ── */
   function wireQuoteRotator() {
     var figure = document.getElementById('quoteRotator');
@@ -205,47 +158,9 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
-  /* ── Grid pager: page through a grid of cards (work, experiments) ── */
-  function wirePager(gridSel, cardSel, prevId, nextId, countId, perPage, hiddenClass) {
-    var grid = document.querySelector(gridSel);
-    var prev = document.getElementById(prevId);
-    var next = document.getElementById(nextId);
-    var count = document.getElementById(countId);
-    if (!grid || !prev || !next || !count) return;
-
-    var cards = Array.prototype.slice.call(grid.querySelectorAll(cardSel));
-    var pages = Math.max(1, Math.ceil(cards.length / perPage));
-    var page = 1; // start on first page
-
-    function show() {
-      cards.forEach(function (card, i) {
-        var on = i >= (page - 1) * perPage && i < page * perPage;
-        card.classList.toggle(hiddenClass, !on);
-      });
-      count.textContent = page + ' / ' + pages;
-      prev.disabled = pages <= 1;
-      next.disabled = pages <= 1;
-    }
-
-    prev.addEventListener('click', function () {
-      page = page > 1 ? page - 1 : pages;
-      show();
-    });
-
-    next.addEventListener('click', function () {
-      page = page < pages ? page + 1 : 1;
-      show();
-    });
-
-    show();
-  }
-
   wireNav();
   wireScrollSpy();
   wireReveal();
-  wireParallax();
   wireQuoteRotator();
   wireYear();
-  wirePager('.work-grid', '.work-card', 'workPrev', 'workNext', 'workCount', 2, 'work-card--hidden');
-  wirePager('.experiments-grid', '.experiment-card', 'expPrev', 'expNext', 'expCount', 3, 'experiment-card--hidden');
 })();

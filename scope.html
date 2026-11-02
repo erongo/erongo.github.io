@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://erongo.net/scope">
   <meta property="og:site_name" content="Erongo Software">
   <meta property="og:image" content="https://erongo.net/img/og-card.png">
-  <meta property="og:image:alt" content="Erongo Software - software development and products">
+  <meta property="og:image:alt" content="Erongo Software: forward deployed engineering, systems integration, applied AI, consultation, delivery">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
@@ -49,13 +49,19 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://erongo.net/#organization",
+        "@type": "ProfessionalService",
+        "@id": "https://erongo.net/#business",
         "name": "Erongo Software",
-        "url": "https://erongo.net",
+        "url": "https://erongo.net/",
+        "description": "Erongo Software embeds with your team to map operational bottlenecks and wire AI, integrations, and automation into the systems your business runs on. Based in Namibia, delivering worldwide.",
         "email": "contact@erongo.net",
         "sameAs": [
-          "https://github.com/erongo"
+          "https://github.com/erongo",
+          "https://www.linkedin.com/company/erongo-software",
+          "https://www.facebook.com/erongo.software",
+          "https://www.instagram.com/erongo.software",
+          "https://whatsapp.com/channel/0029Vb97eb57YSdAhocR5d3c",
+          "https://share.google/SK0LIRSKqzGTpiNqe"
         ]
       },
       {
@@ -64,9 +70,9 @@
         "name": "Scope Your Project",
         "url": "https://erongo.net/scope",
         "description": "Answer a few questions to get a semi-fleshed project brief with platform recommendations and complexity estimates.",
-        "applicationCategory": "Project scoping tool",
+        "applicationCategory": "BusinessApplication",
         "publisher": {
-          "@id": "https://erongo.net/#organization"
+          "@id": "https://erongo.net/#business"
         }
       }
     ]
@@ -75,7 +81,8 @@
 
   <script>
     (function () {
-      var t = localStorage.getItem('erongo-theme') || 'light';
+      var t = localStorage.getItem('erongo-theme')
+        || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -508,7 +515,6 @@
         <ul>
           <li><a href="/#development">Development</a></li>
           <li><a href="/#process">Workflow</a></li>
-          <li><a href="/#work">Past work</a></li>
           <li><a href="/scope">Scope a project</a></li>
           <li><a href="/privacy">Privacy Policy</a></li>
           <li><a href="/terms">Terms of Use</a></li>
@@ -1002,7 +1008,7 @@
         html += `
             <div class="wizard-summary-section">
               <h3>Typical Investment</h3>
-              <p>${estimateRange(complexity, state.answers.region)}. Your exact quote comes with the written scope, within 2 business days of our meeting to discuss your requirements.</p>
+              <p>${estimateRange(complexity, state.answers.region)}. Your exact quote comes with the written scope, within 2-4 business days of our meeting to discuss your requirements.</p>
             </div>`;
 
         if (state.answers.timeline) {
@@ -1055,11 +1061,11 @@
 
         lines.push('');
         lines.push(`Complexity: ${complexity.tier}. ${complexity.desc}`);
-        lines.push(`Typical investment: ${estimateRange(complexity, region)}`);
+        lines.push(`Investment: ${estimateRange(complexity, region)}`);
         // Raw effort estimate is for our own scoping only, not shown on the
         // public wizard result, so it can't be used to derive our rate card.
         lines.push(`Estimated effort: ~${complexity.hours} hours of work`);
-        lines.push('Your exact quote comes with the written scope, within 2 business days of our meeting to discuss your requirements.');
+        lines.push('Your exact quote comes with the written scope, within 2-4 business days of our meeting to discuss your requirements.');
 
         if (state.answers.timeline) {
           lines.push(`Timeline: ${formatTimeline(state.answers.timeline)}`);
@@ -1126,20 +1132,21 @@
       }
 
       // --- Investment ranges ---
-      // Cost = estimated work-hours x internal rate card. The rate card is
-      // internal only, and the visitor is never shown raw hours, only a
-      // rounded cost range, so nobody can reverse-engineer our hourly
-      // rates from the site. Keep in sync with the A-F cards in index.html.
-      const rateCard = {
-        // N$ per work-hour, by client origin and urgency.
-        namibia: { flexible: 450, normal: 650, urgent: 850 },
-        international: { flexible: 850, normal: 1100, urgent: 1300 }
+      // Published ranges, pre-computed per project tier, client origin, and
+      // urgency. These are static strings shipped to the client: the internal
+      // rate card never reaches the site, so rates cannot be derived from it.
+      const INVESTMENT_RANGES = {
+        namibia: {
+          flexible: { small: 'N$35,000 - N$45,000', medium: 'N$115,000 - N$150,000', large: 'N$315,000 - N$410,000' },
+          normal: { small: 'N$50,000 - N$60,000', medium: 'N$165,000 - N$215,000', large: 'N$455,000 - N$595,000' },
+          urgent: { small: 'N$60,000 - N$80,000', medium: 'N$215,000 - N$280,000', large: 'N$595,000 - N$775,000' }
+        },
+        international: {
+          flexible: { small: 'N$60,000 - N$80,000', medium: 'N$215,000 - N$280,000', large: 'N$595,000 - N$775,000' },
+          normal: { small: 'N$80,000 - N$105,000', medium: 'N$275,000 - N$360,000', large: 'N$770,000 - N$1,005,000' },
+          urgent: { small: 'N$95,000 - N$120,000', medium: 'N$325,000 - N$425,000', large: 'N$910,000 - N$1,185,000' }
+        }
       };
-
-      // Top of the range adds ~30% for the unknowns every project carries:
-      // scope creep, change requests, revisions, process re-alignment.
-      const RANGE_SPREAD = 1.3;
-      const ROUND_TO = 5000; // keep published numbers clean
 
       // Human duration phrasing for the estimate.
       function describeDuration(weeks) {
@@ -1152,21 +1159,13 @@
         return '6+ months (phased delivery)';
       }
 
-      function formatNaira(n) {
-        return 'N$' + (Math.round(n / ROUND_TO) * ROUND_TO).toLocaleString('en-US');
-      }
-
-      // estimate = { hours, weeks, urgency } from estimateProject(); region = 'namibia' | 'international'
+      // estimate = { tier, weeks, urgency } from estimateProject(); region = 'namibia' | 'international'
       function estimateRange(estimate, region) {
-        const rates = rateCard[region] || rateCard.namibia;
-        const rate = rates[estimate.urgency] || rates.normal;
-        // Round the low end UP so the published range never anchors below
-        // the true minimum cost of the work.
-        const lo = Math.max(ROUND_TO, Math.ceil((estimate.hours * rate) / ROUND_TO) * ROUND_TO);
-        const hi = Math.ceil((estimate.hours * rate * RANGE_SPREAD) / ROUND_TO) * ROUND_TO;
-        const range = lo === hi ? formatNaira(lo) : `${formatNaira(lo)} - ${formatNaira(hi)}`;
+        const tiers = INVESTMENT_RANGES[region] || INVESTMENT_RANGES.namibia;
+        const row = tiers[estimate.urgency] || tiers.normal;
+        const range = row[estimate.tier.toLowerCase()] || row.small;
         const phased = estimate.tier === 'Large' ? ', delivered in phases' : '';
-        return `projects like this typically land around ${range}${phased}. An estimated ${describeDuration(estimate.weeks)} of delivery time`;
+        return `projects like this typically land around ${range}${phased}, with an estimated ${describeDuration(estimate.weeks)} of delivery time`;
       }
 
       function formatRegion(val) {

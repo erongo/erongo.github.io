@@ -1,4 +1,4 @@
-/* Theme toggle: defaults to light; an explicit user choice persists to localStorage */
+/* Theme toggle: follows the system colour scheme until the user picks a theme; the choice persists to localStorage */
 (function () {
   var STORAGE_KEY = 'erongo-theme';
 
@@ -12,8 +12,9 @@
     }
   }
 
-  // Initialise: persisted user choice wins, otherwise default to light
-  var initial = localStorage.getItem(STORAGE_KEY) || 'light';
+  // Initialise: persisted user choice wins, otherwise follow the system preference
+  var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var initial = localStorage.getItem(STORAGE_KEY) || (systemDark ? 'dark' : 'light');
   applyTheme(initial);
 
   // Toggle button
